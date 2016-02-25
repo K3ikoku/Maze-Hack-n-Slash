@@ -53,5 +53,24 @@ public class MovementScript : MonoBehaviour {
 
     void Move()
     {
+        if(Input.GetMouseButton(0))
+        {
+            //Locating where the player clicks on the terrain
+            LocatePos();
+        }
+
+        // Move player to position
+
+    }
+
+    void LocatePos()
+    {
+        mCamRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(mCamRay, out mFloorHit, mCamRayLength))
+        {
+            mMovePos = new Vector3(mFloorHit.point.x, mFloorHit.point.y, mFloorHit.point.z);
+        }
+
     }
 }
