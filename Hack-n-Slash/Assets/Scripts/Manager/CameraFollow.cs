@@ -2,15 +2,19 @@
 using System.Collections;
 
 public class CameraFollow : MonoBehaviour
+
+    // Gustaf Wall
+
 {
+
     [SerializeField] private Transform mTarget;
-    [SerializeField] private float mSmoothing = 5;
+    [SerializeField] private float mSmoothing = 3;
 
     Vector3 mOffset;
 
     void Start()
     {
-        //Set the offset of the camera to the player
+        //Set the offset of the camera to the standard location above the player
         mOffset = transform.position - mTarget.position;
     }
 

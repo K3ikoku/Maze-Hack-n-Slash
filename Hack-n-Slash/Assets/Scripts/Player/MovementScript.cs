@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Gustaf Wall
+
 public class MovementScript : MonoBehaviour {
 
     [SerializeField] private float mMoveSpeed;
@@ -12,7 +14,9 @@ public class MovementScript : MonoBehaviour {
     private Ray mCamRay;
     private RaycastHit mFloorHit;
     private Vector3 mPlayerToMouse;
-    private Vector3 mMovePos;
+    private float mMoveH;
+    private float mMoveV;
+    private Vector3 mMovement;
     Quaternion mNewRot;
 
     void Awake()
@@ -22,8 +26,11 @@ public class MovementScript : MonoBehaviour {
 
     void FixedUpdate()
     {
+        // Get the axis inputs for moving the character around
+        mMoveH = Input.GetAxisRaw("Horizontal");
+        mMoveV = Input.GetAxisRaw("Vertical");
         Turning();
-        Move();
+        Move(mMoveH, mMoveV);
     }
 
     void Turning()
@@ -40,37 +47,15 @@ public class MovementScript : MonoBehaviour {
             mPlayerRigidbody.MoveRotation(mNewRot);
             Debug.Log(mNewRot);
 
-
-            //mMovePos = mFloorHit.point;
-            //mMovePos.y = 0f;
-
-            //mMovePos = mMovePos.normalized * mMoveSpeed * Time.deltaTime;
-
-            //mPlayerRigidbody.MovePosition(transform.position + mMovePos);
-
         }
     }
 
-    void Move()
+    void Move(float h, float v)
     {
-        if(Input.GetMouseButton(0))
-        {
-            //Locating where the player clicks on the terrain
-            LocatePos();
-        }
+        mMovement.Set(h, 0f, v);
+        mMovement = mMovement.normalized * mMoveSpeed * Time.deltaTime;
 
-        // Move player to position
-
-    }
-
-    void LocatePos()
-    {
-        mCamRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(mCamRay, out mFloorHit, mCamRayLength))
-        {
-            mMovePos = new Vector3(mFloorHit.point.x, mFloorHit.point.y, mFloorHit.point.z);
-        }
+        mPlayerRigidbody.MovePosition(transform.position + mMovement);
 
     }
 }
