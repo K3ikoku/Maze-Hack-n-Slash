@@ -128,7 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mMoveSpeed: 6
-  mPlayerRigidbody: {fileID: 222182930}
 --- !u!1 &231282272
 GameObject:
   m_ObjectHideFlags: 0

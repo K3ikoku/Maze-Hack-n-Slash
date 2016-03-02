@@ -3,7 +3,8 @@ using System.Collections;
 
 // Gustaf Wall
 
-public class MovementScript : MonoBehaviour {
+public class Movement : MonoBehaviour
+{
 
     [SerializeField] private float mMoveSpeed;
 
