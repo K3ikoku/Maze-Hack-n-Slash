@@ -11,6 +11,7 @@ public class AItest2 : MonoBehaviour
    [SerializeField] private Transform mTarget;
    [SerializeField] private int mMinRange;
    [SerializeField] private bool mFollow;
+   [SerializeField] private Quaternion mNewRot;
  
  void Update()
     {
