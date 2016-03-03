@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Johnny Nygren
+
 public class AItest2 : MonoBehaviour
 {
-
+    //Enemy moves towards player when player is close
 
    //[SerializeField] private float mSpeed;
    [SerializeField] private Transform mTarget;
