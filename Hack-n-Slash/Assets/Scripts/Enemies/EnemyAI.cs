@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Johnny Nygren
 public class EnemyAI : MonoBehaviour
 {
     public float playerDist;

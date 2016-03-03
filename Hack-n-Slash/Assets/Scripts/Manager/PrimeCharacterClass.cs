@@ -10,15 +10,8 @@ public class PrimeCharacterClass : MonoBehaviour
 
 
 
-    // Use this for initialization
-    void Start ()
+    public virtual void TakeDamage(float damage)
     {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
+        Debug.Log("Prime took damage");
+    }
 }
