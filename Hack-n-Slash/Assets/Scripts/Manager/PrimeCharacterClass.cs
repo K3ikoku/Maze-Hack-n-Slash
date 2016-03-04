@@ -12,6 +12,5 @@ public class PrimeCharacterClass : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        Debug.Log("Prime took damage");
     }
 }

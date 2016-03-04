@@ -41,11 +41,11 @@ public class MovementScript : MonoBehaviour {
            
             mPlayerToMouse = mFloorHit.point - transform.position;
             mPlayerToMouse.y = 0f;
-            Debug.Log(mPlayerToMouse);
+            //Debug.Log(mPlayerToMouse);
 
             mNewRot = Quaternion.LookRotation(mPlayerToMouse);
             mPlayerRigidbody.MoveRotation(mNewRot);
-            Debug.Log(mNewRot);
+            //Debug.Log(mNewRot);
 
         }
     }
