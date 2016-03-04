@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BulletScript : MonoBehaviour {
-
+    
 	// Use this for initialization
 	void Start ()
     {
@@ -10,13 +10,22 @@ public class BulletScript : MonoBehaviour {
 	}
     void OnCollisionEnter (Collision other)
     {
+        Debug.Log("Hit");
+
        if (other.transform.tag == "Enemy")
         {
-            EnemyBehaviour enemy = other.transform.GetComponent<EnemyBehaviour>();
-            enemy.EnemyHealth -= 50;
+            var enemy = other.transform.GetComponent<EnemyClass>();
+            enemy.TakeDamage(10);
             DestroyObject(gameObject);
         }
-            
+        else
+        {
+            GameObject.Destroy(gameObject);
+        }
+
+
+
+
     }
 
 
