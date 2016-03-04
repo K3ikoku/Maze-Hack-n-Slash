@@ -5,9 +5,11 @@ public class EnemyClass : PrimeCharacterClass
 {
     [SerializeField] private float mEHealth;
     [SerializeField] private float mCurrentHealth;
+    [SerializeField] private float mWaitTime = 1;
+    [SerializeField] private int mEmunity = 0;
 
-	// Use this for initialization
-	void Awake ()
+    // Use this for initialization
+    void Awake ()
     {
         mEHealth = mHealth;
         mCurrentHealth = mEHealth;
@@ -19,17 +21,30 @@ public class EnemyClass : PrimeCharacterClass
     {
 	    if(Input.GetMouseButtonDown(0))
         {
-            TakeDamage(10);
+            TakeDamage(20);
         }
 	}
+
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.tag == "Player" /*&& mEmunity == 0*/)
+        {
+            PlayerClass mPlayer = other.transform.GetComponent<PlayerClass>();
+
+            mPlayer.TakeDamage(10);
+        }
+    }
+
 
     //Take damage funktion called from objects causing damage
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-
+        //mEmunity = 1;
         Debug.Log("The enemy took " + damage + " damage");
-
+        //mWaitTime = Time.deltaTime;
+        //mEmunity = 0;
 
         mCurrentHealth -= damage; //Subtract the damage dealt from the current health
 
@@ -37,6 +52,7 @@ public class EnemyClass : PrimeCharacterClass
         {
             Debug.Log("Enemy died");
             //Death();
+            Destroy(gameObject);
         }    
     }
 }

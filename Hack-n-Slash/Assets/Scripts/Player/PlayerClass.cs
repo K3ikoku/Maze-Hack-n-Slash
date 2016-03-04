@@ -37,8 +37,8 @@ public class PlayerClass : PrimeCharacterClass
 
         Debug.Log("The player took " + damage + " damage");
         mCurrentHealth -= damage;
-
-        if(mCurrentHealth <= 0)
+       
+        if (mCurrentHealth <= 0)
         {
             Debug.Log("Player died");
             //Death();
