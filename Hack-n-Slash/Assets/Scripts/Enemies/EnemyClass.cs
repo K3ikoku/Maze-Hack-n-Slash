@@ -4,7 +4,15 @@ using System.Collections;
 public class EnemyClass : PrimeCharacterClass
 {
     [SerializeField] private float mEHealth;
-    [SerializeField] private float mCurrentHealth;
+    [SerializeField] protected float mCurrentHealth;
+
+    public float Health
+    {
+        get { return mCurrentHealth; }
+
+        set { mCurrentHealth = value; }
+    }
+
 
 	// Use this for initialization
 	void Awake ()
@@ -17,10 +25,7 @@ public class EnemyClass : PrimeCharacterClass
 	// Update is called once per frame
 	void Update ()
     {
-	    if(Input.GetMouseButtonDown(0))
-        {
-            TakeDamage(10);
-        }
+	    
 	}
 
     //Take damage funktion called from objects causing damage
