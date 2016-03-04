@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour {
             Projectile.transform.position = transform.position;
             Projectile.transform.rotation = transform.rotation;
             Rigidbody rb = Projectile.GetComponent<Rigidbody>();
-            rb.velocity = Input.mousePosition/2;
+            rb.velocity = Projectile.transform.forward*5;
             Debug.Log("shootsfired");
         }
 
