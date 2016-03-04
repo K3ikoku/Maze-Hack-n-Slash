@@ -13,4 +13,8 @@ public class PrimeCharacterClass : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
     }
+
+    public virtual void Death()
+    {
+    }
 }

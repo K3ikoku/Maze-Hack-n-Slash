@@ -13,20 +13,36 @@ public class EnemyClass : PrimeCharacterClass
         set { mCurrentHealth = value; }
     }
 
+=======
+    [SerializeField] private float mCurrentHealth;
+    [SerializeField] private float mExp = 10;
+>>>>>>> 16885fcd65c402b8d2e2c0c0167add0ed953351d
 
-	// Use this for initialization
-	void Awake ()
+    private PlayerClass mPlayer;
+
+    // Use this for initialization
+    void Awake()
     {
         mEHealth = mHealth;
         mCurrentHealth = mEHealth;
-        	
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        mPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClass>();
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
+<<<<<<< HEAD
 	    
 	}
+=======
+        if (Input.GetMouseButtonDown(0))
+        {
+            TakeDamage(10);
+        }
+    }
+>>>>>>> 16885fcd65c402b8d2e2c0c0167add0ed953351d
 
     //Take damage funktion called from objects causing damage
     public override void TakeDamage(float damage)
@@ -41,7 +57,16 @@ public class EnemyClass : PrimeCharacterClass
         if (mCurrentHealth <= 0) //Check if current health is 0 or less and run Death function if true
         {
             Debug.Log("Enemy died");
-            //Death();
-        }    
+            Death();
+        }
+    }
+
+    // Johan Jansson
+    public override void Death()
+    {
+        GameObject.Destroy(gameObject);
+        mPlayer.mExperience += mExp;
+        Debug.Log("Enemy died giving the player " + mExp + " and now has a total of " + mPlayer.mExperience);
+
     }
 }
