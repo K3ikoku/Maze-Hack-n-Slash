@@ -4,10 +4,11 @@ using System.Collections;
 public class PlayerClass : PrimeCharacterClass
 {
     // Sebastian Karlsson
-    [SerializeField] public float mCurrentHealth;
+    [SerializeField] public float mExpToLevelUp = 100f;
     [SerializeField] public float mExperience;
     [SerializeField] public float mPlayerHealth;
-    
+    [SerializeField] public float mCurrentHealth;
+
 
     private AudioSource mAudio;
 
