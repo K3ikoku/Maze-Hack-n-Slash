@@ -2,21 +2,43 @@
 using System.Collections;
 
 public class BulletScript : MonoBehaviour {
+    float mDamage;
+    string mTarget;
     
+
+
 	// Use this for initialization
-	void Start ()
+	public void Startlate (float damage, string target)
     {
-	
+        mTarget = target;
+        mDamage = damage;
+
+        
+
 	}
     void OnCollisionEnter (Collision other)
     {
-        Debug.Log("Hit");
+        
 
-       if (other.transform.tag == "Enemy")
+       if (other.transform.tag == mTarget)
         {
-            var enemy = other.transform.GetComponent<EnemyClass>();
-            enemy.TakeDamage(10);
-            DestroyObject(gameObject);
+            
+            if (mTarget == "Enemy")
+            {
+                var Enemy = other.transform.GetComponent<EnemyClass>();
+                Enemy.TakeDamage(mDamage);
+                DestroyObject(gameObject);
+            }
+            else
+            {
+                var Player = other.transform.GetComponent<PlayerClass>();
+                Player.TakeDamage(mDamage);
+                DestroyObject(gameObject);
+
+            }
+            
+            
+            Debug.Log("Damage is " + mDamage + " and Target is " + mTarget);
         }
         else
         {
