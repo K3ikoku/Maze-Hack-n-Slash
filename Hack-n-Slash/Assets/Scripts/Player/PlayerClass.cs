@@ -4,14 +4,17 @@ using System.Collections;
 public class PlayerClass : PrimeCharacterClass
 {
     // Sebastian Karlsson
-    [SerializeField] private float mCurrentHealth;
+    [SerializeField] public float mCurrentHealth;
     [SerializeField] public float mExperience;
+    [SerializeField] public float mPlayerHealth;
+    
 
     private AudioSource mAudio;
 
     void Awake()
     {
-        mCurrentHealth = mHealth;
+        mPlayerHealth = mHealth;
+        mCurrentHealth = mPlayerHealth;
         mAudio = GetComponent<AudioSource>();
     }
 
@@ -44,14 +47,9 @@ public class PlayerClass : PrimeCharacterClass
 
         Debug.Log("The player took " + damage + " damage"); // Print out amount of damage taken
         mCurrentHealth -= damage;
-<<<<<<< HEAD
-       
-        if (mCurrentHealth <= 0)
-=======
 
         // Check if the players hp is larger than 0 and run death script if not
         if(mCurrentHealth <= 0)
->>>>>>> 338bd91941b5606f26635fbf84d41bc05a579a47
         {
             Debug.Log("Player died");
             Death();
