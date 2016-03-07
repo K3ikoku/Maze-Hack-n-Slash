@@ -4,25 +4,61 @@ using System.Collections;
 public class PlayerClass : PrimeCharacterClass
 {
     // Sebastian Karlsson
-    [SerializeField] public float mExpToLevelUp = 100f;
-    [SerializeField] public float mExperience;
-    [SerializeField] public float mPlayerHealth;
-    [SerializeField] public float mCurrentHealth;
+    [SerializeField] private float mExpToLevelUp = 100f;
+    [SerializeField] private float mExperience;
+    [SerializeField] private float mCurrentHealth;
+
+    public float Experience
+    {
+        get { return mExperience; }
+
+        set { mExperience = value; }
+    }
+    
+    public float ExpToLevelUp
+    {
+        get { return mExpToLevelUp; }
+
+        private set { mExpToLevelUp += 200f; }
+    }   
+
+    public float MaxHealth
+    {
+        get { return mHealth; }
+
+        private set { mHealth = value; }
+    }
+
+    public float CurrentHealth
+    {
+        get { return mCurrentHealth; }
+
+        set { mCurrentHealth = value; }
+    }
+
+    public float Damage
+    {
+        get { return mDamage; }
+
+        private set { mDamage = value; }
+    }
+
+    
 
 
     private AudioSource mAudio;
 
     void Awake()
     {
-        mPlayerHealth = mHealth;
-        mCurrentHealth = mPlayerHealth;
+        MaxHealth = mHealth;
+        CurrentHealth = MaxHealth;
         mAudio = GetComponent<AudioSource>();
     }
 
 	// Use this for initialization
 	void Start ()
     {
-	
+         
 	}
 	
 	// Update is called once per frame
@@ -30,15 +66,18 @@ public class PlayerClass : PrimeCharacterClass
     {
         // Gustaf Wall
         // Check if the players HP is higher than the max hp and set it to max hp
-        if(mCurrentHealth >= mHealth)
+        if(CurrentHealth >= MaxHealth)
         {
-            mCurrentHealth = mHealth;
+            CurrentHealth = MaxHealth;
         }
 
         if(Input.GetMouseButtonDown(1))
         {
-            TakeDamage(10);
+            TakeDamage(Damage);
         }
+
+        ExpToLevelUp = 0f;
+        Debug.Log(ExpToLevelUp);
 	
 	}
     // Gustaf Wall

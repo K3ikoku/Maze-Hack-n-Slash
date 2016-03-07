@@ -77,8 +77,8 @@ public class EnemyClass : PrimeCharacterClass
     public override void Death()
     {
         GameObject.Destroy(gameObject);
-        mPlayer.mExperience += mExp;
-        Debug.Log("Enemy died giving the player " + mExp + " and now has a total of " + mPlayer.mExperience);
+        mPlayer.Experience = mExp;
+        Debug.Log("Enemy died giving the player " + mExp);
 
     }
 }
