@@ -122,16 +122,15 @@ namespace Pathfinding
 			if (rvoController != null) rvoController.enableRotation = false;
 			tr = transform;
             mTarget = GameObject.FindGameObjectWithTag("Player").transform;
-		}
+            startHasRun = false;
 
-		/** Starts searching for paths.
+        }
+
+        /** Starts searching for paths.
 		 * If you override this function you should in most cases call base.Start () at the start of it.
 		 * \see OnEnable
 		 * \see SearchPaths
 		 */
-		protected virtual void Start () {
-			startHasRun = false;
-		}
 
         void OnTriggerEnter()
         {
