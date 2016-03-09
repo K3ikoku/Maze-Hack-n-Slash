@@ -75,9 +75,6 @@ public class PlayerClass : PrimeCharacterClass
         {
             TakeDamage(Damage);
         }
-
-        ExpToLevelUp = 0f;
-        Debug.Log(ExpToLevelUp);
 	
 	}
     // Gustaf Wall
