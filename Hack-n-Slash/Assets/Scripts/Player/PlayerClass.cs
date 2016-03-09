@@ -50,10 +50,13 @@ public class PlayerClass : PrimeCharacterClass
 
     void Awake()
     {
+        
         MaxHealth = mHealth;
         CurrentHealth = MaxHealth;
+       
         mAudio = GetComponent<AudioSource>();
     }
+    
 
 	// Use this for initialization
 	void Start ()
@@ -76,15 +79,18 @@ public class PlayerClass : PrimeCharacterClass
             TakeDamage(Damage);
         }
 
-        ExpToLevelUp = 0f;
-        Debug.Log(ExpToLevelUp);
-	
-	}
+        if (Input.GetKey(KeyCode.F))
+        {
+            transform.GetComponentInChildren<MeleeAttack>().Attack();
+
+        }
+
+    }
     // Gustaf Wall
     public override void TakeDamage(float damage) // Override parents Take damage function
     {
         base.TakeDamage(damage);
-
+      
         Debug.Log("The player took " + damage + " damage"); // Print out amount of damage taken
         mCurrentHealth -= damage;
 

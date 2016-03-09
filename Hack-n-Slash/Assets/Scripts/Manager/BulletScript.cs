@@ -29,7 +29,7 @@ public class BulletScript : MonoBehaviour {
                 Enemy.TakeDamage(mDamage);
                 DestroyObject(gameObject);
             }
-            else
+            if (mTarget == "Player")
             {
                 var Player = other.transform.GetComponent<PlayerClass>();
                 Player.TakeDamage(mDamage);

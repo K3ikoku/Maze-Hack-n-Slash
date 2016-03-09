@@ -36,14 +36,11 @@ public class EnemyClass : PrimeCharacterClass
     void Update()
     {
 
-	    if(Input.GetMouseButtonDown(0))
-        {
-            TakeDamage(20);
-        }
+	   
 	}
 
 
-    void OnCollisionEnter(Collision other)
+    void OnCollider(Collision other)
     {
         if (other.transform.tag == "Player" /*&& mEmunity == 0*/)
         {
