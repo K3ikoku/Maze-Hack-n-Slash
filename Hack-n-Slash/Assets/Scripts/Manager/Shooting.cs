@@ -2,13 +2,12 @@
 using System.Collections;
 
 public class Shooting : MonoBehaviour {
-   [SerializeField] protected GameObject Bullet;
+   [SerializeField] protected GameObject mBullet;
    [SerializeField] protected float mBulletSpeed = 50.0f;
-   [SerializeField] protected float mCoolDownMax;
-   protected float mCoolDown = 50.0f;
+   [SerializeField] protected float mAttackSpeed;
+   protected float mTimer = 50.0f;
 
-
-
+    
 
     void Awake ()
     {
@@ -19,19 +18,19 @@ public class Shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetMouseButton(0) && mCoolDown >= mCoolDownMax)
+        if (Input.GetMouseButton(0) && mTimer >= mAttackSpeed)
         {            
-            GameObject Projectile = Instantiate(Bullet) as GameObject;
+            GameObject Projectile = Instantiate(mBullet) as GameObject;
             Projectile.transform.position = transform.position;
             Projectile.transform.rotation = transform.rotation;
             Projectile.GetComponent<BulletScript>().Startlate(15.0f, "Enemy");
             Rigidbody rb = Projectile.GetComponent<Rigidbody>();
             rb.velocity = Projectile.transform.forward*mBulletSpeed;
-            mCoolDown = 0.0f;
+            mTimer = 0.0f;
         }
-        if (mCoolDown < mCoolDownMax)
+        if (mTimer < mAttackSpeed)
         {
-            mCoolDown += Time.deltaTime;
+            mTimer += Time.deltaTime;
         }
 	}
 }

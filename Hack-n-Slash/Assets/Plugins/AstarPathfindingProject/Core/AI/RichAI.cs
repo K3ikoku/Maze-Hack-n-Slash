@@ -3,21 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding.RVO;
 
-namespace Pathfinding {
+namespace Pathfinding
+{
 	[RequireComponent(typeof(Seeker))]
 	[AddComponentMenu("Pathfinding/AI/RichAI (3D, for navmesh)")]
 	/** Advanced AI for navmesh based graphs.
 	 * \astarpro
 	 */
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_rich_a_i.php")]
-	public class RichAI : MonoBehaviour {
-		public Transform target;
+	public class RichAI : MonoBehaviour
+    {
+		public Transform mTarget;
 
 		/** Draw gizmos in the scene view */
 		public bool drawGizmos = true;
 
 		/** Search for new paths repeatedly */
-		public bool repeatedlySearchPaths = false;
+		public bool repeatedlySearchPaths = true;
 
 		/** Delay (seconds) between path searches */
 		public float repathRate = 0.5f;
@@ -119,6 +121,7 @@ namespace Pathfinding {
 			rvoController = GetComponent<RVOController>();
 			if (rvoController != null) rvoController.enableRotation = false;
 			tr = transform;
+            mTarget = GameObject.FindGameObjectWithTag("Player").transform;
 		}
 
 		/** Starts searching for paths.
@@ -127,16 +130,21 @@ namespace Pathfinding {
 		 * \see SearchPaths
 		 */
 		protected virtual void Start () {
-			startHasRun = true;
-			OnEnable();
+			startHasRun = false;
 		}
 
-		/** Run at start and when reenabled.
+        void OnTriggerEnter()
+        {
+            startHasRun = true;
+            OnEnable();
+        }
+
+        /** Run at start and when reenabled.
 		 * Starts RepeatTrySearchPath.
 		 *
 		 * \see Start
 		 */
-		protected virtual void OnEnable () {
+        protected virtual void OnEnable () {
 			lastRepath = -9999;
 			waitingForPathCalc = false;
 			canSearchPath = true;
@@ -176,7 +184,7 @@ namespace Pathfinding {
 
 			waitingForPathCalc = true;
 			lastRepath = Time.time;
-			seeker.StartPath(tr.position, target.position);
+			seeker.StartPath(tr.position, mTarget.position);
 		}
 
 		IEnumerator SearchPaths () {
