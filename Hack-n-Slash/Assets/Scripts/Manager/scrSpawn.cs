@@ -8,18 +8,28 @@ public class scrSpawn : MonoBehaviour {
 
     [SerializeField] private Transform[] mTeleport;
     [SerializeField] private GameObject[] mPrefeb;
+    [SerializeField] private GameObject mNavmesh;
 
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         int tele_num = Random.Range(0, 1);
         int prefeb_num = Random.Range(0, 3);
 
      
 
-        Instantiate (mPrefeb[prefeb_num], mTeleport[tele_num].position, mTeleport[tele_num].rotation);
+        Instantiate(mPrefeb[prefeb_num], mTeleport[tele_num].position, mTeleport[tele_num].rotation);
+
     }
-	
+
+    void Awake()
+    {
+        if (mNavmesh != null)
+        {
+            Instantiate(mNavmesh);
+        }
+    }
 	// Update is called once per frame
 	void Update () {
 	

@@ -101,13 +101,13 @@ public class PlayerClass : PrimeCharacterClass
         {
             CurrentHealth = MaxHealth;
         }
-        //Debug key for adding experience
-        if (Input.GetMouseButtonDown(1))
-        {
-            Experience = 20;
-        }
-        // Check if the player has gained enough experience to level up
-        if(Experience >= ExpToLevelUp)
+        ////Debug key for adding experience
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    Experience = 20;
+        //}
+        //Check if the player has gained enough experience to level up
+        if (Experience >= ExpToLevelUp)
         {
             LevelUp();
         }
@@ -135,7 +135,7 @@ public class PlayerClass : PrimeCharacterClass
         {
             mAttackTimer = mAttackCooldown;
             
-            transform.GetComponentInChildren<MeleeAttack>().Attack(mBaseDamage , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
+            transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f) , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
         }
 
 

@@ -18,8 +18,8 @@ TagManager:
   - Floor
   - Ground
   - Obstacles
-  - 
-  - 
+  - Bullet
+  - Player capsule
   - 
   - 
   - 

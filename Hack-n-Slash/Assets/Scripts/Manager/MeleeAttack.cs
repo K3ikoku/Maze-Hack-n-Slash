@@ -9,7 +9,7 @@ public class MeleeAttack : MonoBehaviour {
     private string mSelfTag;
     private string mOtherTag;
     private float mMeleeRange = 1.5f;
-    private float mMeleeDamage = 15;    
+    private float mMeleeDamage;
     //private float mAttackTimer = 0;
 
     public void Attack (float damage, float range, string self, string other)
@@ -26,12 +26,6 @@ public class MeleeAttack : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
-        
-        
-
-        
-        
-
     }
 	
 	// Update is called once per frame
@@ -49,12 +43,11 @@ public class MeleeAttack : MonoBehaviour {
 
     protected void AttackMelee()
     {
-        Debug.Log("my tag is " + mSelfTag + " other tag is " + mOtherTag);
+        //Debug.Log("my tag is " + mSelfTag + " other tag is " + mOtherTag);
         Collider[] colliders = Physics.OverlapSphere(transform.position, mMeleeRange);
         
         foreach (Collider hit in colliders)
         {
-            
 
             if (hit.transform.tag == mOtherTag)
             {

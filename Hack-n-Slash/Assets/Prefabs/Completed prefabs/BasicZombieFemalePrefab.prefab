@@ -372,7 +372,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 484626}
   - 137: {fileID: 13714966}
-  - 114: {fileID: 11405594}
   m_Layer: 0
   m_Name: Tops
   m_TagString: Untagged
@@ -465,6 +464,23 @@ GameObject:
   - 4: {fileID: 466534}
   m_Layer: 0
   m_Name: mixamorig:LeftHandPinky1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &149188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 467390}
+  - 33: {fileID: 3355392}
+  - 114: {fileID: 11485244}
+  m_Layer: 0
+  m_Name: TestGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,7 +621,7 @@ GameObject:
   - 114: {fileID: 11436424}
   m_Layer: 0
   m_Name: BasicZombieFemalePrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -894,7 +910,7 @@ GameObject:
   - 136: {fileID: 13663508}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1759,8 +1775,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156840}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.06316, y: 4.9828653, z: -22.93568}
+  m_LocalRotation: {x: 0, y: 0.024317658, z: 0, w: -0.9997043}
+  m_LocalPosition: {x: 188.6, y: 0, z: 30.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442952}
@@ -1772,6 +1788,7 @@ Transform:
   - {fileID: 439396}
   - {fileID: 484626}
   - {fileID: 474890}
+  - {fileID: 467390}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &465114
@@ -1813,6 +1830,18 @@ Transform:
   - {fileID: 440466}
   m_Father: {fileID: 455030}
   m_RootOrder: 2
+--- !u!4 &467390
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149188}
+  m_LocalRotation: {x: 0, y: 0.024317658, z: 0, w: -0.9997043}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.49999994}
+  m_Children: []
+  m_Father: {fileID: 463600}
+  m_RootOrder: 9
 --- !u!4 &467438
 Transform:
   m_ObjectHideFlags: 1
@@ -1938,7 +1967,7 @@ Transform:
   m_GameObject: {fileID: 179212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1.3}
   m_Children: []
   m_Father: {fileID: 463600}
   m_RootOrder: 8
@@ -2142,6 +2171,13 @@ Transform:
   - {fileID: 437166}
   m_Father: {fileID: 455030}
   m_RootOrder: 0
+--- !u!33 &3355392
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149188}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3399962
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2166,26 +2202,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11405594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5243ab915a77b04488921c8fbd988d9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mHealth: 100
-  mDamage: 20
-  mMovementSpeed: 6
-  mEHealth: 0
-  mCurrentHealth: 0
-  mWaitTime: 1
-  mEmunity: 0
-  mExp: 10
-  mAttackCooldown: 2
 --- !u!114 &11436424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2233,6 +2249,19 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &11485244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23746cb4ec7ce6a4dacae1347def50a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mAttackRange: 2.5
+  mAttackArc: 0.25
 --- !u!114 &11496184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2248,7 +2277,7 @@ MonoBehaviour:
   drawGizmos: 1
   repeatedlySearchPaths: 1
   repathRate: 0.5
-  maxSpeed: 1
+  maxSpeed: 6
   acceleration: 5
   slowdownTime: 0.5
   rotationSpeed: 360

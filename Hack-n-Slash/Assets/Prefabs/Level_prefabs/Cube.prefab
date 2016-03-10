@@ -91,13 +91,7 @@ MonoBehaviour:
   - {fileID: 456308}
   mPrefeb:
   - {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
-  - {fileID: 165196, guid: 22df315c5a4b4d64b9dd3ca9ecd0c950, type: 2}
-  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
-  - {fileID: 160032, guid: 67057406d303620469ba1fa629a47a82, type: 2}
-  - {fileID: 120650, guid: 013110ef34163c143b86ad1078d5bf09, type: 2}
-  - {fileID: 117848, guid: 1c8c84aee7cc4f84984a8c9512ce97d5, type: 2}
-  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
-  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
+  mNavmesh: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -107,7 +101,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.size
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: mTeleport.Array.size
@@ -120,7 +114,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[1]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 165196, guid: 22df315c5a4b4d64b9dd3ca9ecd0c950, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
@@ -172,27 +166,27 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[2]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[3]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 160032, guid: 67057406d303620469ba1fa629a47a82, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[4]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 120650, guid: 013110ef34163c143b86ad1078d5bf09, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[5]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 117848, guid: 1c8c84aee7cc4f84984a8c9512ce97d5, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[6]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[7]
       value: 
-      objectReference: {fileID: 168722, guid: ab9f864214a647e44ab9ed27903fea36, type: 2}
+      objectReference: {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[8]
       value: 

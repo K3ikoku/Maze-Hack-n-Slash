@@ -40,9 +40,10 @@ public class BulletScript : MonoBehaviour {
             
             Debug.Log("Damage is " + mDamage + " and Target is " + mTarget);
         }
+
         else
         {
-            GameObject.Destroy(gameObject);
+           GameObject.Destroy(gameObject);
         }
 
 

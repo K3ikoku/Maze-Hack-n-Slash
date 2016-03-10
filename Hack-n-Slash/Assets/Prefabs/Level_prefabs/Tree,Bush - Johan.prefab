@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3359228}
   - 64: {fileID: 6400184}
   - 23: {fileID: 2370306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree,Bush - Johan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 165620}

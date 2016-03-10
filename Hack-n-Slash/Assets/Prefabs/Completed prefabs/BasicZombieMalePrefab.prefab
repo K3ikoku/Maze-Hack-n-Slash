@@ -376,7 +376,7 @@ GameObject:
   - 114: {fileID: 11461038}
   m_Layer: 0
   m_Name: BasicZombieMalePrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,6 +941,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &184160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451574}
+  - 33: {fileID: 3377756}
+  - 114: {fileID: 11475262}
+  m_Layer: 0
+  m_Name: TestGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &184636
 GameObject:
   m_ObjectHideFlags: 1
@@ -1043,7 +1060,7 @@ GameObject:
   - 136: {fileID: 13606410}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1450,6 +1467,7 @@ Transform:
   - {fileID: 405770}
   - {fileID: 448836}
   - {fileID: 486102}
+  - {fileID: 451574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &439292
@@ -1610,6 +1628,18 @@ Transform:
   - {fileID: 459960}
   m_Father: {fileID: 447128}
   m_RootOrder: 4
+--- !u!4 &451574
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184160}
+  m_LocalRotation: {x: 0, y: -0.04862094, z: 0, w: 0.9988173}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.099999994, y: 0.1, z: 0.49999997}
+  m_Children: []
+  m_Father: {fileID: 438520}
+  m_RootOrder: 8
 --- !u!4 &454096
 Transform:
   m_ObjectHideFlags: 1
@@ -1984,7 +2014,7 @@ Transform:
   m_GameObject: {fileID: 190300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.98, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1.3}
   m_Children: []
   m_Father: {fileID: 438520}
   m_RootOrder: 7
@@ -2113,6 +2143,13 @@ Transform:
   - {fileID: 441160}
   m_Father: {fileID: 472758}
   m_RootOrder: 2
+--- !u!33 &3377756
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184160}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3382094
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2184,6 +2221,19 @@ MonoBehaviour:
   mEmunity: 0
   mExp: 10
   mAttackCooldown: 2
+--- !u!114 &11475262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23746cb4ec7ce6a4dacae1347def50a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mAttackRange: 2.5
+  mAttackArc: 0.25
 --- !u!114 &11498212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2199,7 +2249,7 @@ MonoBehaviour:
   drawGizmos: 1
   repeatedlySearchPaths: 1
   repathRate: 0.5
-  maxSpeed: 1
+  maxSpeed: 6
   acceleration: 5
   slowdownTime: 0.5
   rotationSpeed: 360
