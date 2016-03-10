@@ -8,7 +8,12 @@ public class EnemyClass : PrimeCharacterClass
     [SerializeField] private float mWaitTime = 1;
     [SerializeField] private int mEmunity = 0;
     [SerializeField] private float mExp = 10;
-
+    [SerializeField] private float mAttackCooldown = 2;
+    private float mStunTime;
+    private float mStunDur = 0.5f;
+    private float mAttackTimer = 1;
+    private string mSelfTag;
+    private string mOtherTag;
     private PlayerClass mPlayer;
 
 
@@ -25,6 +30,18 @@ public class EnemyClass : PrimeCharacterClass
     // Use this for initialization
     void Awake()
     {
+        //Sebastian
+        mSelfTag = gameObject.transform.tag;
+
+        if (mSelfTag == "Player")
+        {
+            mOtherTag = "Enemy";
+        }
+        else if (mSelfTag == "Enemy")
+        {
+            mOtherTag = "Player";
+        }
+        // end Sebastian
         mEHealth = mHealth;
         mCurrentHealth = mEHealth;
         mPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClass>();
@@ -35,9 +52,28 @@ public class EnemyClass : PrimeCharacterClass
     // Update is called once per frame
     void Update()
     {
+        //Sebastian Karlsson
+        //Cooldown for Attack
+        if (mAttackTimer > 0)
+        {
+            mAttackTimer -= Time.deltaTime;
+        }
+        //Stun Duration
+        if (mStunTime > 0)
+        {
+            mStunTime -= Time.deltaTime;
+            mAttackTimer = mAttackCooldown;
+        }
 
-	   
-	}
+        //Call script from weapon who is a child object to the player!
+        if (mAttackTimer <= 0 && mStunTime <=0)
+        {
+            mAttackTimer = mAttackCooldown;
+
+            transform.GetComponentInChildren<MeleeAttack>().Attack(10, 1.5f, mSelfTag, mOtherTag);// going to add the player damage here
+        }
+
+    }
 
 
     void OnCollider(Collision other)
@@ -55,6 +91,7 @@ public class EnemyClass : PrimeCharacterClass
     //Take damage funktion called from objects causing damage
     public override void TakeDamage(float damage)
     {
+        mStunTime = mStunDur;
         base.TakeDamage(damage);
         //mEmunity = 1;
         Debug.Log("The enemy took " + damage + " damage");
