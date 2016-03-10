@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerClass : PrimeCharacterClass
 {
@@ -7,12 +8,24 @@ public class PlayerClass : PrimeCharacterClass
     [SerializeField] private float mExpToLevelUp = 100f;
     [SerializeField] private float mExperience;
     [SerializeField] private float mCurrentHealth;
+    [SerializeField] private float mLevel;
+    [SerializeField] private Text mLvlText;
+    [SerializeField] private float mFlashSpeed;
+    [SerializeField] private float mBaseDamage;
+
+    private float mDmgBuff;
+    private float mHpBuff;
+    private AudioSource mAudio;
+    private bool mLevelUp = false;
+    private Color mLvlUpColor = new Color(255f, 255f, 255f, 200f);
+   
+
 
     public float Experience
     {
         get { return mExperience; }
 
-        set { mExperience = value; }
+        set { mExperience += value; }
     }
     
     public float ExpToLevelUp
@@ -38,21 +51,24 @@ public class PlayerClass : PrimeCharacterClass
 
     public float Damage
     {
-        get { return mDamage; }
+        get { return mBaseDamage; }
 
-        private set { mDamage = value; }
+        private set { mBaseDamage = value; }
     }
 
-    
-
-
-    private AudioSource mAudio;
+    public float Level
+    {
+        get { return mLevel; }
+        private set { mLevel += value; }
+    }
 
     void Awake()
     {
         MaxHealth = mHealth;
+        mBaseDamage = mDamage;
         CurrentHealth = MaxHealth;
         mAudio = GetComponent<AudioSource>();
+        Debug.Log(MaxHealth);
     }
 
 	// Use this for initialization
@@ -70,13 +86,30 @@ public class PlayerClass : PrimeCharacterClass
         {
             CurrentHealth = MaxHealth;
         }
-
-        if(Input.GetMouseButtonDown(1))
+        //Debug key for adding experience
+        if (Input.GetMouseButtonDown(1))
         {
-            TakeDamage(Damage);
+            Experience = 20;
         }
-	
-	}
+        // Check if the player has gained enough experience to level up
+        if(Experience >= ExpToLevelUp)
+        {
+            LevelUp();
+        }
+
+        //Check if leveled up and show the text in the level up text in the middle of the screen
+        if (mLevelUp)
+        {
+            mLvlText.color = mLvlUpColor;
+        }
+        else
+        {
+            mLvlText.color = Color.Lerp(mLvlText.color, Color.clear, mFlashSpeed * Time.deltaTime);
+        }
+        mLevelUp = false;
+
+
+    }
     // Gustaf Wall
     public override void TakeDamage(float damage) // Override parents Take damage function
     {
@@ -102,5 +135,28 @@ public class PlayerClass : PrimeCharacterClass
         Application.Quit(); //Exit game
 
 
+    }
+
+    void LevelUp()
+    {
+        mLevelUp = true;
+        mExperience -= mExpToLevelUp; //Remove the exp to level up from the experience variable
+        ExpToLevelUp = 0; //Increase the amount of exp needed to level up
+        Level = 1; //Increment the players level with one
+        mCurrentHealth = mHealth;
+        CalculateStats();  
+    }
+
+    void CalculateStats()
+    {
+        //Calculate how much to increment stats based on level and add them to the variables
+        mDmgBuff = 2;
+        mHpBuff = 5;
+        
+               
+        Damage += mDmgBuff;
+        MaxHealth += mHpBuff;
+        CurrentHealth += mHpBuff;
+        Debug.Log(Level + " " + Damage + " " + MaxHealth);
     }
 }
