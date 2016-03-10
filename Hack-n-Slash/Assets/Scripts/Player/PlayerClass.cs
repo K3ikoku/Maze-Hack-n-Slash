@@ -12,7 +12,7 @@ public class PlayerClass : PrimeCharacterClass
     [SerializeField] private Text mLvlText;
     [SerializeField] private float mFlashSpeed;
     [SerializeField] private float mBaseDamage;
-    [SerializeField] private float mAttackCooldown = 10.5f;
+    [SerializeField] private float mAttackCooldown = 0.5f;
     private float mDmgBuff;
     private float mHpBuff;
     private AudioSource mAudio;
