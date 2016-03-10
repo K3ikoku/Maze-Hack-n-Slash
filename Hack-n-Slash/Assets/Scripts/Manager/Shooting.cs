@@ -11,9 +11,8 @@ public class Shooting : MonoBehaviour {
 
     void Awake ()
     {
-        
-
-	}
+        mBullet = GameObject.FindGameObjectWithTag("Bullet");
+    }
 	
 	// Update is called once per frame
 	void Update ()
