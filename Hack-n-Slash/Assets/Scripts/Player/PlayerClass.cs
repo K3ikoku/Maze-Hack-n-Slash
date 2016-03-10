@@ -12,13 +12,15 @@ public class PlayerClass : PrimeCharacterClass
     [SerializeField] private Text mLvlText;
     [SerializeField] private float mFlashSpeed;
     [SerializeField] private float mBaseDamage;
-
+    [SerializeField] private float mAttackCooldown = 10.5f;
     private float mDmgBuff;
     private float mHpBuff;
     private AudioSource mAudio;
     private bool mLevelUp = false;
     private Color mLvlUpColor = new Color(255f, 255f, 255f, 200f);
-   
+    private float mAttackTimer=1;
+    private string mSelfTag;
+    private string mOtherTag;
 
 
     public float Experience
@@ -64,6 +66,19 @@ public class PlayerClass : PrimeCharacterClass
 
     void Awake()
     {
+        //Sebastian
+        mSelfTag = gameObject.transform.tag;
+
+        if (mSelfTag == "Player")
+        {
+            mOtherTag = "Enemy";
+        }
+        else if (mSelfTag == "Enemy")
+        {
+            mOtherTag = "Player";
+        }
+        // end Sebastian
+
         MaxHealth = mHealth;
         mBaseDamage = mDamage;
         CurrentHealth = MaxHealth;
@@ -107,6 +122,22 @@ public class PlayerClass : PrimeCharacterClass
             mLvlText.color = Color.Lerp(mLvlText.color, Color.clear, mFlashSpeed * Time.deltaTime);
         }
         mLevelUp = false;
+
+        //Sebastian Karlsson
+        //Cooldown for Attack
+        if (mAttackTimer > 0)
+        {
+            mAttackTimer -= Time.deltaTime;
+            
+        }
+        //Call script from weapon who is a child object to the player!
+        if (Input.GetKey(KeyCode.F) && mAttackTimer <= 0)
+        {
+            mAttackTimer = mAttackCooldown;
+            
+            transform.GetComponentInChildren<MeleeAttack>().Attack(mBaseDamage , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
+        }
+
 
 
     }

@@ -25,7 +25,7 @@ public class BulletScript : MonoBehaviour {
             
             if (mTarget == "Enemy")
             {
-                var Enemy = other.transform.GetComponent<EnemyClass>();
+                var Enemy = other.transform.GetComponentInParent<EnemyClass>();
                 Enemy.TakeDamage(mDamage);
                 DestroyObject(gameObject);
             }
