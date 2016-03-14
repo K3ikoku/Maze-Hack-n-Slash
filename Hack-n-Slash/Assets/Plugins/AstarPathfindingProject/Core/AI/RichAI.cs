@@ -26,7 +26,7 @@ namespace Pathfinding
 
 		/** Max speed of the agent.
 		* World units per second */
-		public float maxSpeed = 1;
+		public float maxSpeed = 6;
 		/** Max acceleration of the agent.
 		 * World units per second per second */
 		public float acceleration = 5;
@@ -132,10 +132,13 @@ namespace Pathfinding
 		 * \see SearchPaths
 		 */
 
-        void OnTriggerEnter()
+        void OnTriggerEnter(Collider other)
         {
-            startHasRun = true;
-            OnEnable();
+            if (other.transform.tag == "Player")
+            {
+                startHasRun = true;
+                OnEnable();
+            }
         }
 
         /** Run at start and when reenabled.

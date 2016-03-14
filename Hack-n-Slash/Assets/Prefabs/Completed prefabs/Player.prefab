@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mBullet: {fileID: 104484, guid: 117b1fbb41f720c438b1b655dbb3dbd3, type: 2}
   mBulletSpeed: 50
-  mAttackSpeed: 0.25
+  mAttackSpeed: 0.35
 --- !u!114 &11447158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2303,7 +2303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c30d0baf7986474691fb791a781f27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMoveSpeed: 8
+  mMoveSpeed: 0
+  mAttackingMoveSpeed: 2
   mPlayerRigidbody: {fileID: 5487216}
 --- !u!114 &11472204
 MonoBehaviour:
@@ -2340,7 +2341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mAttackRange: 2.5
   mAttackArc: 0.25
-  mPlayer: {fileID: 11472204}
 --- !u!136 &13673152
 CapsuleCollider:
   m_ObjectHideFlags: 1

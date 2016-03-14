@@ -3,9 +3,11 @@ using System.Collections;
 
 // Gustaf Wall
 
-public class MovementScript : MonoBehaviour {
+public class MovementScript : MonoBehaviour
+{
 
     [SerializeField] private float mMoveSpeed;
+    [SerializeField] private float mAttackingMoveSpeed;
     [SerializeField] private Rigidbody mPlayerRigidbody;
 
 
@@ -18,10 +20,12 @@ public class MovementScript : MonoBehaviour {
     private float mMoveV;
     private Vector3 mMovement;
     Quaternion mNewRot;
+    private PlayerClass mPlayerClass;
 
     void Awake()
     {
         mFloorMask = LayerMask.GetMask("Floor");
+        mPlayerClass = GetComponent<PlayerClass>();
     }
 
     void FixedUpdate()
@@ -30,7 +34,18 @@ public class MovementScript : MonoBehaviour {
         mMoveH = Input.GetAxisRaw("Horizontal");
         mMoveV = Input.GetAxisRaw("Vertical");
         Turning();
-        Move(mMoveH, mMoveV);
+
+        if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
+        {
+            mMoveSpeed = mAttackingMoveSpeed;
+        }
+        else
+        {
+            mMoveSpeed = mPlayerClass.MovementSpeed;
+        }
+
+            Move(mMoveH, mMoveV, mMoveSpeed);
+        
     }
 
     void Turning()
@@ -50,10 +65,10 @@ public class MovementScript : MonoBehaviour {
         }
     }
 
-    void Move(float h, float v)
+    void Move(float h, float v, float movespeed)
     {
         mMovement.Set(h, 0f, v);
-        mMovement = mMovement.normalized * mMoveSpeed * Time.deltaTime;
+        mMovement = mMovement.normalized * movespeed * Time.deltaTime;
 
         mPlayerRigidbody.MovePosition(transform.position + mMovement);
 

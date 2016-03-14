@@ -2222,6 +2222,7 @@ MonoBehaviour:
   mEmunity: 0
   mExp: 10
   mAttackCooldown: 2
+  mPlayer: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6, type: 2}
 --- !u!114 &11478252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2675,7 +2676,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: mPlayer
+      value: 
+      objectReference: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156840}

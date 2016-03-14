@@ -21,13 +21,19 @@ public class PlayerClass : PrimeCharacterClass
     private float mAttackTimer=1;
     private string mSelfTag;
     private string mOtherTag;
+    private bool mIsAttacking;
 
+    public float MovementSpeed
+    {
+        get { return mMovementSpeed; }
+        set { mMovementSpeed = value; }
+    }
 
     public float Experience
     {
         get { return mExperience; }
 
-        set { mExperience += value; }
+        set { mExperience = value; }
     }
     
     public float ExpToLevelUp
