@@ -18,6 +18,7 @@ public class Shooting : MonoBehaviour {
     {
         if (Input.GetMouseButton(0) && mTimer >= mAttackSpeed)
         {            
+            
             GameObject Projectile = Instantiate(mBullet) as GameObject;
             Projectile.transform.position = transform.position;
             Projectile.transform.rotation = transform.rotation;

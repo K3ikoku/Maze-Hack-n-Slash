@@ -2283,15 +2283,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5243ab915a77b04488921c8fbd988d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mHealth: 100
-  mDamage: 20
-  mMovementSpeed: 6
+  mHealth: 75
+  mDamage: 25
+  mMovementSpeed: 10
   mEHealth: 0
   mCurrentHealth: 0
   mWaitTime: 1
   mEmunity: 0
-  mExp: 10
+  mExp: 15
   mAttackCooldown: 2
+  mPlayer: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6, type: 2}
 --- !u!114 &11485308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2307,7 +2308,7 @@ MonoBehaviour:
   drawGizmos: 1
   repeatedlySearchPaths: 1
   repathRate: 0.5
-  maxSpeed: 6
+  maxSpeed: 10
   acceleration: 5
   slowdownTime: 0.5
   rotationSpeed: 360
@@ -2746,6 +2747,31 @@ Prefab:
       propertyPath: m_Name
       value: GasMaskGirlPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mHealth
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mDamage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mMovementSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mExp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mPlayer
+      value: 
+      objectReference: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190308}
