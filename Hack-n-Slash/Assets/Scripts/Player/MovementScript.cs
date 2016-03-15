@@ -8,6 +8,7 @@ public class MovementScript : MonoBehaviour {
     [SerializeField] private float mMoveSpeed;
     [SerializeField] private Rigidbody mPlayerRigidbody;
 
+    private Animator anim;
 
     private float mCamRayLength = 100f;
     private int mFloorMask;
@@ -22,6 +23,7 @@ public class MovementScript : MonoBehaviour {
     void Awake()
     {
         mFloorMask = LayerMask.GetMask("Floor");
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -52,6 +54,8 @@ public class MovementScript : MonoBehaviour {
 
     void Move(float h, float v)
     {
+        anim.SetFloat("runSpeed", Mathf.Max(h, v));
+
         mMovement.Set(h, 0f, v);
         mMovement = mMovement.normalized * mMoveSpeed * Time.deltaTime;
 

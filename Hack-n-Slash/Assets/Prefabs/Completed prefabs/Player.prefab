@@ -28,6 +28,7 @@ GameObject:
   - 114: {fileID: 11447158}
   - 136: {fileID: 13673152}
   - 54: {fileID: 5487216}
+  - 114: {fileID: 11458146}
   m_Layer: 1
   m_Name: Player
   m_TagString: Player
@@ -2164,7 +2165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100728}
   m_LocalRotation: {x: 0, y: 0.024317658, z: 0, w: -0.9997043}
-  m_LocalPosition: {x: 188.9, y: 0, z: 24.4}
+  m_LocalPosition: {x: -0.6, y: 3.8278504e-17, z: -1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452410}
@@ -2270,12 +2271,18 @@ Animator:
   m_GameObject: {fileID: 100728}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 849c0ec9213640f4cbdb29621ea8d0ff, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8938f6c3d2842542b5b4966ca4fb123, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some transforms are animated by both a Humanoid
+    animation clip and a Generic animation clip. Only the Humanoid clip will be applied
+    on those transforms.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+    'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform
+    'mixamorig:RightFoot'\n\tTransform 'mixamorig:LeftUpLeg'\n\tTransform 'mixamorig:LeftArm'\n\tTransform
+    'mixamorig:RightHand'\n\tTransform 'mixamorig:RightShoulder'\n\tand more ...\n\tFrom
+    animation clip 'pistol_idle'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11416442
@@ -2305,6 +2312,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mMoveSpeed: 8
   mPlayerRigidbody: {fileID: 5487216}
+--- !u!114 &11458146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f671cc9a9da7345941133bc17f6f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11472204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2340,7 +2358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mAttackRange: 2.5
   mAttackArc: 0.25
-  mPlayer: {fileID: 11472204}
 --- !u!136 &13673152
 CapsuleCollider:
   m_ObjectHideFlags: 1
