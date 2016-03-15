@@ -89,7 +89,7 @@ public class PlayerClass : PrimeCharacterClass
         mBaseDamage = mDamage;
         CurrentHealth = MaxHealth;
         mAudio = GetComponent<AudioSource>();
-        Debug.Log(MaxHealth);
+
     }
 
 	// Use this for initialization

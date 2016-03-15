@@ -19,6 +19,7 @@ public class MovementScript : MonoBehaviour {
     private float mMoveV;
     private Vector3 mMovement;
     Quaternion mNewRot;
+    private float runSpeed;
 
     void Awake()
     {
@@ -54,12 +55,18 @@ public class MovementScript : MonoBehaviour {
 
     void Move(float h, float v)
     {
-        anim.SetFloat("runSpeed", Mathf.Max(h, v));
+        //SetFloat("runSpeed", Mathf.Max(h, v));
+        
+        
 
         mMovement.Set(h, 0f, v);
         mMovement = mMovement.normalized * mMoveSpeed * Time.deltaTime;
 
         mPlayerRigidbody.MovePosition(transform.position + mMovement);
+
+        anim.SetFloat("Vspeed", Input.GetAxis("Vertical"));
+        anim.SetFloat("Hspeed", Input.GetAxis("Horizontal"));
+
 
     }
 }
