@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletScript : MonoBehaviour {
+public class BulletScript : MonoBehaviour
+{
     float mDamage;
     string mTarget;
+    private float mTimer = 0;
     
-
-
+    
 	// Use this for initialization
 	public void Startlate (float damage, string target)
     {
@@ -51,12 +52,26 @@ public class BulletScript : MonoBehaviour {
 
     }
 
-
-	// Update is called once per frame
-	void Update ()
+    void FixedUpdate()
     {
-	    
+
+    }
+
+    //Update is called once per frame
+    void Update()
+    {
+
+        if (mTimer >= 0.5f)
+        {
+            GameObject.Destroy(gameObject);
+
+        }
+        else
+        {
+            mTimer += Time.deltaTime;
+        }
 
 
-	}
+
+    }
 }

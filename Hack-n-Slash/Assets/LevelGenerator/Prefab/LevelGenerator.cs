@@ -6,11 +6,12 @@ using System.Collections.Generic;
 public class LevelGenerator : MonoBehaviour {
 
     //level generation
-    [SerializeField]private GameObject[] mTiles;
-    [SerializeField]private GameObject mWall;
-    [SerializeField]private GameObject mPlayer;
-    [SerializeField]private GameObject mEnemy;
-    [SerializeField]private GameObject mExit;
+    [SerializeField] private GameObject[] mTiles;
+    [SerializeField] private GameObject mWall;
+    [SerializeField] private GameObject mPlayer;
+    [SerializeField] private GameObject mEnemy;
+    [SerializeField] private GameObject mExit;
+    [SerializeField] private GameObject mNavmesh;
 
     public List <Vector3> mCreatedTiles;
 
@@ -32,6 +33,8 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField]
     private float mWaitTime;
 
+    private NavmeshManager mNavManager;
+
     //Wall generation
     private float mMinX = 999999;
     private float mMaxX = 0;
@@ -48,13 +51,19 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField]
     private int mMonsterSpawn = 5;
 
-    void Start() {
+    void Start()
+    {
 
         StartCoroutine(GenerateLevel());
         if(mEnableRandom == true)
         {
         Random.seed = mRandomSeed;
         }
+    }
+
+    void Awake()
+    {
+        mNavManager = mNavmesh.GetComponent<NavmeshManager>();
     }
 
     IEnumerator GenerateLevel()
@@ -167,6 +176,7 @@ public class LevelGenerator : MonoBehaviour {
         PlaceCharacter();
         CreateWallValues();
         CreateWall();
+        mNavManager.CreateNavmesh();
 
     }
 

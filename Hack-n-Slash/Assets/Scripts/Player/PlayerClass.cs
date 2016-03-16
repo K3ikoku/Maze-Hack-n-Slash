@@ -13,6 +13,9 @@ public class PlayerClass : PrimeCharacterClass
     [SerializeField] private float mFlashSpeed;
     [SerializeField] private float mBaseDamage;
     [SerializeField] private float mAttackCooldown = 0.5f;
+    [SerializeField] private Image mDamageImage;
+
+
     private float mDmgBuff;
     private float mHpBuff;
     private AudioSource mAudio;
@@ -22,6 +25,7 @@ public class PlayerClass : PrimeCharacterClass
     private string mSelfTag;
     private string mOtherTag;
     private bool mIsAttacking;
+    private bool mDamaged;
 
     public float MovementSpeed
     {
@@ -144,6 +148,16 @@ public class PlayerClass : PrimeCharacterClass
             transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f) , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
         }
 
+        // If the player takes damage flash the red color over the screen
+        if(mDamaged)
+        {
+            mDamageImage.color = new Color(1f, 0f, 0f, 0.1f);
+        }
+        else
+        {
+            mDamageImage.color = Color.Lerp(mDamageImage.color, Color.clear, 0.5f * Time.deltaTime);
+        }
+        mDamaged = false;
 
 
     }
@@ -151,6 +165,8 @@ public class PlayerClass : PrimeCharacterClass
     public override void TakeDamage(float damage) // Override parents Take damage function
     {
         base.TakeDamage(damage);
+
+        mDamaged = true;
 
         Debug.Log("The player took " + damage + " damage"); // Print out amount of damage taken
         mCurrentHealth -= damage;
