@@ -7,6 +7,7 @@ public class MovementScript : MonoBehaviour {
 
     [SerializeField] private float mMoveSpeed;
     [SerializeField] private Rigidbody mPlayerRigidbody;
+    [SerializeField] private float mAttackingSpeed;
 
     private Animator anim;
 
@@ -19,7 +20,6 @@ public class MovementScript : MonoBehaviour {
     private float mMoveV;
     private Vector3 mMovement;
     Quaternion mNewRot;
-    private float runSpeed;
 
     void Awake()
     {
@@ -33,7 +33,14 @@ public class MovementScript : MonoBehaviour {
         mMoveH = Input.GetAxisRaw("Horizontal");
         mMoveV = Input.GetAxisRaw("Vertical");
         Turning();
-        Move(mMoveH, mMoveV);
+        if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
+        {
+            Move(mMoveH, mMoveV, mAttackingSpeed);
+        }
+        else
+        {
+            Move(mMoveH, mMoveV, mMoveSpeed);
+        }
     }
 
     void Turning()
@@ -53,14 +60,14 @@ public class MovementScript : MonoBehaviour {
         }
     }
 
-    void Move(float h, float v)
+    void Move(float h, float v, float speed)
     {
         //SetFloat("runSpeed", Mathf.Max(h, v));
         
         
 
         mMovement.Set(h, 0f, v);
-        mMovement = mMovement.normalized * mMoveSpeed * Time.deltaTime;
+        mMovement = mMovement.normalized * speed * Time.deltaTime;
 
         mPlayerRigidbody.MovePosition(transform.position + mMovement);
 

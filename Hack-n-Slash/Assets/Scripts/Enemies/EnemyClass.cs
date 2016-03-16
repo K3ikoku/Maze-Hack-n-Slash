@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class EnemyClass : PrimeCharacterClass
 {
     [SerializeField] private float mEHealth;
@@ -15,6 +16,7 @@ public class EnemyClass : PrimeCharacterClass
     private string mSelfTag;
     private string mOtherTag;
     private PlayerClass mPlayer;
+    private Pathfinding.RichAI mRichAi; 
 
 
 
@@ -45,6 +47,8 @@ public class EnemyClass : PrimeCharacterClass
         mEHealth = mHealth;
         mCurrentHealth = mEHealth;
         mPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClass>();
+
+        mRichAi = GetComponent<Pathfinding.RichAI>();
         
 
     }
@@ -91,6 +95,11 @@ public class EnemyClass : PrimeCharacterClass
     //Take damage funktion called from objects causing damage
     public override void TakeDamage(float damage)
     {
+        if(mCurrentHealth == Health)
+        {
+            mRichAi.StartChasing();
+        }
+
         mStunTime = mStunDur;
         base.TakeDamage(damage);
         //mEmunity = 1;

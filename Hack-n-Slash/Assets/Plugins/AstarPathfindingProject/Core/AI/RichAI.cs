@@ -126,18 +126,25 @@ namespace Pathfinding
 
         }
 
+        public void StartChasing()
+        {
+            startHasRun = true;
+            OnEnable();
+        }
+
         /** Starts searching for paths.
 		 * If you override this function you should in most cases call base.Start () at the start of it.
 		 * \see OnEnable
 		 * \see SearchPaths
 		 */
 
+
         void OnTriggerEnter(Collider other)
         {
+
             if (other.transform.tag == "Player")
             {
-                startHasRun = true;
-                OnEnable();
+                StartChasing();
             }
         }
 
