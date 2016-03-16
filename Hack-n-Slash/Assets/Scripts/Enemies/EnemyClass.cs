@@ -16,8 +16,9 @@ public class EnemyClass : PrimeCharacterClass
     private string mSelfTag;
     private string mOtherTag;
     private PlayerClass mPlayer;
-    private Pathfinding.RichAI mRichAi; 
+    private Pathfinding.RichAI mRichAi;
 
+    
 
 
     public float Health

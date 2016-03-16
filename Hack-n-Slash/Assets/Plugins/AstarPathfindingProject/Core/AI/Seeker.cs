@@ -18,6 +18,14 @@ public class Seeker : MonoBehaviour, ISerializationCallbackReceiver {
 	 *
 	 * \see OnDrawGizmos
 	 */
+private Animator anim;
+
+    
+
+    public void FixedUpdate()
+    {
+        anim.SetFloat("Vspeed", Input.GetAxis("Vertical"));// Not sure if its placed correctly, check with init programmer regarding the structure of animation codes
+    }   
 	public bool drawGizmos = true;
 
 	/** Enables drawing of the non-postprocessed path using Gizmos.
@@ -121,7 +129,8 @@ public class Seeker : MonoBehaviour, ISerializationCallbackReceiver {
 
 	/** Initializes a few variables */
 	void Awake () {
-		startEndModifier.Awake(this);
+        anim = GetComponent<Animator>();
+        startEndModifier.Awake(this);
 	}
 
 	/** Path that is currently being calculated or was last calculated.

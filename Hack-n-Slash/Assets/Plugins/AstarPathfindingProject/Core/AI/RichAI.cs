@@ -15,6 +15,7 @@ namespace Pathfinding
     {
 		public Transform mTarget;
 
+
 		/** Draw gizmos in the scene view */
 		public bool drawGizmos = true;
 
@@ -66,7 +67,12 @@ namespace Pathfinding
 		 * the funnel as a post-processing step.
 		 */
 		public RichFunnel.FunnelSimplification funnelSimplification = RichFunnel.FunnelSimplification.None;
-		public Animation anim;
+        //public Animation anim;//Legacy code for animation.
+        public Animator anim; 
+        //:-)
+        //public Animatior
+        //public Animator
+        //public Animator anim; //- suggestable if animation components will be able to play animation.
 
 		/** Use a 3rd degree equation for calculating slowdown acceleration instead of a 2nd degree.
 		 * A 3rd degree equation can also make sure that the velocity when reaching the target is roughly zero and therefore
@@ -114,6 +120,8 @@ namespace Pathfinding
 
 		bool startHasRun;
 		protected float lastRepath = -9999;
+
+
 
 		void Awake () {
 			seeker = GetComponent<Seeker>();
@@ -583,8 +591,8 @@ namespace Pathfinding
 			tr.localPosition = Vector3.zero;
 			tr.localRotation = Quaternion.identity;
 
-			//Set up animation speeds
-			if (rs.reverse && al.reverseAnim) {
+			//Set up animation speeds          //JOHAN ÄNDRA
+			/*if (rs.reverse && al.reverseAnim) {
 				anim[al.clip].speed = -al.animSpeed;
 				anim[al.clip].normalizedTime = 1;
 				anim.Play(al.clip);
@@ -594,12 +602,12 @@ namespace Pathfinding
 				anim.Rewind(al.clip);
 				anim.Play(al.clip);
 			}
-
+            */
 			//Fix required for animations in reverse direction
 			tr.parent.position -= tr.position-tr.parent.position;
-
+                                                            //JOHAN ÄNDRA
 			//Wait for the animation to finish
-			yield return new WaitForSeconds(Mathf.Abs(anim[al.clip].length/al.animSpeed));
+			//yield return new WaitForSeconds(Mathf.Abs(anim[al.clip].length/al.animSpeed));
 
 			traversingSpecialPath = false;
 			NextPart();
