@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh_RichAI/NavmeshExample.unity
-  isLoaded: 1
-  isActive: 1
