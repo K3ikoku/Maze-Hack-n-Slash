@@ -152,6 +152,14 @@ Prefab:
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11447158, guid: 07848279fda51d945beb0588e540bee6, type: 2}
+      propertyPath: mMaxSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447158, guid: 07848279fda51d945beb0588e540bee6, type: 2}
+      propertyPath: mMoveIncrementation
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07848279fda51d945beb0588e540bee6, type: 2}
   m_IsPrefabParent: 0

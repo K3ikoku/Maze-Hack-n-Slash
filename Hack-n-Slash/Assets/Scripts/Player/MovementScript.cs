@@ -8,6 +8,8 @@ public class MovementScript : MonoBehaviour {
     [SerializeField] private float mMoveSpeed;
     [SerializeField] private Rigidbody mPlayerRigidbody;
     [SerializeField] private float mAttackingSpeed;
+    [SerializeField] private float mMaxSpeed;
+    [SerializeField] private float mMoveIncrementation;
 
     private Animator anim;
 
@@ -20,6 +22,7 @@ public class MovementScript : MonoBehaviour {
     private float mMoveV;
     private Vector3 mMovement;
     Quaternion mNewRot;
+    private bool mIsAttacking = false;
 
     void Awake()
     {
@@ -27,21 +30,44 @@ public class MovementScript : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
+        {
+            mIsAttacking = true;
+        }
+        if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.F))
+        {
+            mIsAttacking = false;
+        }
+
+        if (mIsAttacking)
+        {
+            mMoveSpeed = mAttackingSpeed;
+        }
+    }
     void FixedUpdate()
     {
         // Get the axis inputs for moving the character around
         mMoveH = Input.GetAxisRaw("Horizontal");
         mMoveV = Input.GetAxisRaw("Vertical");
         Turning();
-        if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
+
+        Move(mMoveH, mMoveV);
+
+    }
+    void LateUpdate()
+    {
+        if (!mIsAttacking && mMoveSpeed < mMaxSpeed)
         {
-            Move(mMoveH, mMoveV, mAttackingSpeed);
-        }
-        else
-        {
-            Move(mMoveH, mMoveV, mMoveSpeed);
+            mMoveSpeed += Time.deltaTime * mMoveIncrementation;
+            Debug.Log(mMoveSpeed);
+            if (mMoveSpeed > mMaxSpeed)
+                mMoveSpeed = mMaxSpeed;
         }
     }
+
+
 
     void Turning()
     {
@@ -60,14 +86,14 @@ public class MovementScript : MonoBehaviour {
         }
     }
 
-    void Move(float h, float v, float speed)
+    void Move(float h, float v)
     {
         //SetFloat("runSpeed", Mathf.Max(h, v));
         
         
 
         mMovement.Set(h, 0f, v);
-        mMovement = mMovement.normalized * speed * Time.deltaTime;
+        mMovement = mMovement.normalized * mMoveSpeed * Time.deltaTime;
 
         mPlayerRigidbody.MovePosition(transform.position + mMovement);
 
