@@ -514,7 +514,10 @@ namespace Pathfinding
 					tr.position = RaycastPosition(tr.position, tr.position.y);
 				}
 			}
-		}
+
+            Debug.DrawRay(transform.position, Velocity * 1, Color.red);
+            anim.SetFloat("Vspeed", Velocity.magnitude);
+        }
 
 		Vector3 RaycastPosition (Vector3 position, float lasty) {
 			if (raycastingForGroundPlacement) {
@@ -605,7 +608,9 @@ namespace Pathfinding
             */
 			//Fix required for animations in reverse direction
 			tr.parent.position -= tr.position-tr.parent.position;
-                                                            //JOHAN ÄNDRA
+            //JOHAN ÄNDRA
+            
+            
 			//Wait for the animation to finish
 			//yield return new WaitForSeconds(Mathf.Abs(anim[al.clip].length/al.animSpeed));
 
