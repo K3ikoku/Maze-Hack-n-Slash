@@ -6,4 +6,4 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/NevxTest.unity
+    path: Assets/Scenes/Test Scenes/Sebbe_level_gen_test.unity
