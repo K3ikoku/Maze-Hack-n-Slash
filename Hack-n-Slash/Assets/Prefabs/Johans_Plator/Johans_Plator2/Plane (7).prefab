@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3387024}
   - 64: {fileID: 6472348}
   - 23: {fileID: 2373062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3318990}
   - 23: {fileID: 2313112}
   - 64: {fileID: 6438710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock5B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3372922}
   - 23: {fileID: 2362562}
   - 64: {fileID: 6424770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock4A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3398368}
   - 23: {fileID: 2337700}
   - 64: {fileID: 6431582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100836}

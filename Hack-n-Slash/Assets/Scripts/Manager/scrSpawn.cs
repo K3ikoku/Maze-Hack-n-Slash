@@ -14,21 +14,24 @@ public class scrSpawn : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        int tele_num = Random.Range(0, 1);
-        int prefeb_num = Random.Range(0, 3);
+       
+        int monsters = Random.Range(1, 3);
 
-     
+        for (int i = 0; i <= monsters; i++)
+        {
+            Debug.Log("Spawning");
+            int tele_num = Random.Range(0, 1);
+            int prefeb_num = Random.Range(0, 3);
+            Instantiate(mPrefeb[prefeb_num], mTeleport[tele_num].position, mTeleport[tele_num].rotation);
+        }    
 
-        Instantiate(mPrefeb[prefeb_num], mTeleport[tele_num].position, mTeleport[tele_num].rotation);
+        //DestroyObject(gameObject);
 
     }
 
     void Awake()
     {
-        if (mNavmesh != null)
-        {
-            Instantiate(mNavmesh);
-        }
+      
     }
 	// Update is called once per frame
 	void Update () {

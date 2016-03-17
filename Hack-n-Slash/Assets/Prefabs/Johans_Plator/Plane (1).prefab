@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3345130}
   - 23: {fileID: 2393406}
   - 64: {fileID: 6454778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 01 prefab (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3303166}
   - 64: {fileID: 6433830}
   - 23: {fileID: 2300522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3308552}
   - 23: {fileID: 2329620}
   - 64: {fileID: 6404732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 01 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3321068}
   - 23: {fileID: 2325622}
   - 64: {fileID: 6459368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 01 prefab (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 193: {fileID: 19397388}
   - 33: {fileID: 3321442}
   - 23: {fileID: 2392520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree10_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152552}

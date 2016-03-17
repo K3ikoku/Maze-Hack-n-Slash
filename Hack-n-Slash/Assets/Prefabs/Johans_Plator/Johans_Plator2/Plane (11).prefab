@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3323682}
   - 23: {fileID: 2329414}
   - 95: {fileID: 9523846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3313552}
   - 64: {fileID: 6421358}
   - 23: {fileID: 2379790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3353996}
   - 23: {fileID: 2308228}
   - 95: {fileID: 9506686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3371710}
   - 23: {fileID: 2375466}
   - 95: {fileID: 9529418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 33: {fileID: 3329796}
   - 23: {fileID: 2379232}
   - 95: {fileID: 9555560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Generic Cliff_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - 33: {fileID: 3323940}
   - 23: {fileID: 2369066}
   - 95: {fileID: 9514134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - 33: {fileID: 3334114}
   - 23: {fileID: 2311714}
   - 95: {fileID: 9587906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Ruin Platform 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131746}

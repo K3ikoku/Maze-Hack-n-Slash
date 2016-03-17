@@ -2221,7 +2221,7 @@ MonoBehaviour:
   mEmunity: 0
   mExp: 10
   mAttackCooldown: 2
-  mPlayer: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6, type: 2}
+  mBlood: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
 --- !u!114 &11475262
 MonoBehaviour:
   m_ObjectHideFlags: 1

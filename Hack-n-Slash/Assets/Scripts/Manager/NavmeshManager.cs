@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Pathfinding
+public class NavmeshManager : MonoBehaviour
 {
-
-
-    public class NavmeshManager : MonoBehaviour
+    private AstarPath mAstarPath;
+	// Use this for initialization
+	void Awake ()
     {
-        void Awake()
-        {
-            AstarPath.active.Scan();
-        }
+        mAstarPath = GetComponent<AstarPath>();
+	}
+	
+	// Update is called once per frame
+	void Update ()
+    {
+	
+	}
+
+    public void CreateNavmesh()
+    {
+        mAstarPath.Scan();
     }
 }

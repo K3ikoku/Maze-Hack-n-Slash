@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 407978}
   - 33: {fileID: 3392580}
   - 23: {fileID: 2356730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Just Another Model1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 33: {fileID: 3329140}
   - 64: {fileID: 6426998}
   - 23: {fileID: 2386004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 463760}
   - 33: {fileID: 3325120}
   - 23: {fileID: 2347482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Tree_Low3 bx222
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 4: {fileID: 453984}
   - 33: {fileID: 3325914}
   - 23: {fileID: 2385108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Tree_Low3 bx223
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - 4: {fileID: 493446}
   - 33: {fileID: 3358512}
   - 23: {fileID: 2378596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Tree_Low3 bx223
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 484614}
   - 95: {fileID: 9540546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP-TreeCommon_Green 02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 4: {fileID: 432224}
   - 33: {fileID: 3393188}
   - 23: {fileID: 2399306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Tree_Low3 bx221
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - 33: {fileID: 3361436}
   - 23: {fileID: 2350480}
   - 95: {fileID: 9572840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Rock small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416202}
   - 95: {fileID: 9548278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP-TreeCommon_Green 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - 4: {fileID: 477516}
   - 33: {fileID: 3301520}
   - 23: {fileID: 2382222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Just Another Model3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - 33: {fileID: 3349342}
   - 23: {fileID: 2371126}
   - 95: {fileID: 9569202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Rock big (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 479700}
   - 95: {fileID: 9533206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP-TreeCommon_Green 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - 4: {fileID: 456148}
   - 33: {fileID: 3367606}
   - 23: {fileID: 2348732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Tree_Low3 bx222
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - 33: {fileID: 3341574}
   - 23: {fileID: 2316794}
   - 95: {fileID: 9585168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Block 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - 33: {fileID: 3355218}
   - 23: {fileID: 2352864}
   - 95: {fileID: 9581232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Rock big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - 4: {fileID: 476432}
   - 33: {fileID: 3329492}
   - 23: {fileID: 2388592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Tree_Low3 bx221
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - 4: {fileID: 488610}
   - 33: {fileID: 3349588}
   - 23: {fileID: 2303300}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Just Another Model2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1112,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114398}

@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3344048}
   - 23: {fileID: 2321336}
   - 95: {fileID: 9584894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3328214}
   - 23: {fileID: 2388312}
   - 95: {fileID: 9564590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3309238}
   - 23: {fileID: 2391270}
   - 95: {fileID: 9566262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3356926}
   - 23: {fileID: 2364158}
   - 95: {fileID: 9592654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 04 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 33: {fileID: 3327386}
   - 64: {fileID: 6467416}
   - 23: {fileID: 2390124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - 33: {fileID: 3387502}
   - 23: {fileID: 2388996}
   - 95: {fileID: 9523936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - 33: {fileID: 3369778}
   - 23: {fileID: 2316468}
   - 95: {fileID: 9585456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - 33: {fileID: 3356362}
   - 23: {fileID: 2322340}
   - 95: {fileID: 9553988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 142576}

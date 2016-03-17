@@ -8,7 +8,7 @@ public class LevelGenerator : MonoBehaviour {
     //level generation
     [SerializeField] private GameObject[] mTiles;
     [SerializeField] private GameObject mWall;
-    [SerializeField] private GameObject mPlayer;
+    //[SerializeField] private GameObject mPlayer;
     [SerializeField] private GameObject mEnemy;
     [SerializeField] private GameObject mExit;
     [SerializeField] private GameObject mNavmesh;
@@ -184,7 +184,7 @@ public class LevelGenerator : MonoBehaviour {
     {
 
         transform.position = mCreatedTiles[0];
-        Instantiate(mPlayer, transform.position, transform.rotation);
+        //    Instantiate(mPlayer, transform.position, transform.rotation);
         transform.position = mCreatedTiles[mCreatedTiles.Count - 1];
         Instantiate(mExit, transform.position, transform.rotation);
 
@@ -199,9 +199,9 @@ public class LevelGenerator : MonoBehaviour {
 
 
 
-    }
+}
 
-    void CreateWallValues()
+void CreateWallValues()
     {
         for(int i = 0; i < mCreatedTiles.Count; i++)
         {

@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3343172}
   - 23: {fileID: 2363504}
   - 64: {fileID: 6487864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 05 prefab (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3399978}
   - 64: {fileID: 6488534}
   - 23: {fileID: 2320336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 33: {fileID: 3304062}
   - 23: {fileID: 2366486}
   - 64: {fileID: 6413578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 03 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3334720}
   - 23: {fileID: 2335560}
   - 64: {fileID: 6485740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 03 prefab (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 33: {fileID: 3374136}
   - 23: {fileID: 2373500}
   - 64: {fileID: 6426548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 05 prefab (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - 193: {fileID: 19331606}
   - 33: {fileID: 3313702}
   - 23: {fileID: 2305378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tree10_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - 33: {fileID: 3372288}
   - 23: {fileID: 2332654}
   - 64: {fileID: 6460936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 04 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - 33: {fileID: 3390030}
   - 23: {fileID: 2335470}
   - 64: {fileID: 6478396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 05 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105566}

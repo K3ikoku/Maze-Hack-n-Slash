@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 455350}
   - 33: {fileID: 3381890}
   - 23: {fileID: 2371962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Just Another Model1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 33: {fileID: 3357812}
   - 23: {fileID: 2315512}
   - 95: {fileID: 9503190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 481682}
   - 33: {fileID: 3363698}
   - 23: {fileID: 2315354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Just Another Model3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 33: {fileID: 3336632}
   - 23: {fileID: 2310410}
   - 95: {fileID: 9572408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Colum 05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _M3_Anim_Data
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 480692}
   - 33: {fileID: 3342338}
   - 23: {fileID: 2308660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall2_FInal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - 33: {fileID: 3330274}
   - 23: {fileID: 2364570}
   - 95: {fileID: 9567914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Block 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ruine Wall A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496394}
   - 95: {fileID: 9577776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP-TreeCommon_Green 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - 4: {fileID: 418146}
   - 33: {fileID: 3330722}
   - 23: {fileID: 2313626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Just Another Model2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - 33: {fileID: 3310966}
   - 64: {fileID: 6450936}
   - 23: {fileID: 2394170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - 33: {fileID: 3397172}
   - 23: {fileID: 2321752}
   - 95: {fileID: 9567332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TRP_Ruin Platform 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180966}

@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3323490}
   - 23: {fileID: 2391690}
   - 64: {fileID: 6463796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 02 prefab (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 33: {fileID: 3334388}
   - 64: {fileID: 6445490}
   - 23: {fileID: 2352766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 426624}
   - 33: {fileID: 3338814}
   - 23: {fileID: 2301926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log01_SoilBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430374}
   - 205: {fileID: 20598922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - 4: {fileID: 444374}
   - 33: {fileID: 3345382}
   - 23: {fileID: 2383584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log01_Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - 4: {fileID: 451036}
   - 33: {fileID: 3394548}
   - 23: {fileID: 2342190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - 4: {fileID: 407584}
   - 33: {fileID: 3378352}
   - 23: {fileID: 2328652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - 4: {fileID: 419108}
   - 33: {fileID: 3348406}
   - 23: {fileID: 2302652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 481588}
   - 65: {fileID: 6531202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Log01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - 33: {fileID: 3343254}
   - 23: {fileID: 2387630}
   - 64: {fileID: 6412068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bush 02 prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 109042}

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 430286}
   - 33: {fileID: 3387122}
   - 23: {fileID: 2326320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 33: {fileID: 3381498}
   - 23: {fileID: 2386094}
   - 64: {fileID: 6469858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock5B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 421830}
   - 33: {fileID: 3373466}
   - 23: {fileID: 2302852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1_grup3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - 4: {fileID: 461638}
   - 33: {fileID: 3357718}
   - 23: {fileID: 2354612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - 4: {fileID: 454782}
   - 33: {fileID: 3359356}
   - 23: {fileID: 2398524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 33: {fileID: 3321442}
   - 23: {fileID: 2322354}
   - 65: {fileID: 6504332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - 4: {fileID: 434806}
   - 33: {fileID: 3337466}
   - 23: {fileID: 2374620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - 33: {fileID: 3302374}
   - 23: {fileID: 2320542}
   - 65: {fileID: 6560466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 480878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1_grup3(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 492330}
   - 205: {fileID: 20534748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1LOD_grup3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - 33: {fileID: 3396434}
   - 23: {fileID: 2303896}
   - 65: {fileID: 6552338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - 4: {fileID: 494080}
   - 33: {fileID: 3387838}
   - 23: {fileID: 2333108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - 4: {fileID: 466802}
   - 33: {fileID: 3368836}
   - 23: {fileID: 2335300}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - 33: {fileID: 3332824}
   - 64: {fileID: 6480554}
   - 23: {fileID: 2368534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - 33: {fileID: 3312072}
   - 23: {fileID: 2389202}
   - 65: {fileID: 6545108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - 4: {fileID: 484232}
   - 33: {fileID: 3370598}
   - 23: {fileID: 2315962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 408396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1_grup5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - 4: {fileID: 464400}
   - 33: {fileID: 3304848}
   - 23: {fileID: 2347720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - 4: {fileID: 493906}
   - 33: {fileID: 3301518}
   - 23: {fileID: 2325088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - 4: {fileID: 459594}
   - 33: {fileID: 3366058}
   - 23: {fileID: 2347178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock1C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1288,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180704}

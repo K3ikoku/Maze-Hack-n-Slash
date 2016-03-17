@@ -10,6 +10,9 @@ public class EnemyClass : PrimeCharacterClass
     [SerializeField] private int mEmunity = 0;
     [SerializeField] private float mExp = 10;
     [SerializeField] private float mAttackCooldown = 2;
+    [SerializeField] private GameObject mBlood;
+
+
     private float mStunTime;
     private float mStunDur = 0.5f;
     private float mAttackTimer = 1;
@@ -96,6 +99,10 @@ public class EnemyClass : PrimeCharacterClass
     //Take damage funktion called from objects causing damage
     public override void TakeDamage(float damage)
     {
+        Vector3 mBloodPos = transform.position;
+        mBloodPos.z += 0.2f;
+        Instantiate(mBlood, mBloodPos, transform.rotation);
+
         if(mCurrentHealth == Health)
         {
             mRichAi.StartChasing();

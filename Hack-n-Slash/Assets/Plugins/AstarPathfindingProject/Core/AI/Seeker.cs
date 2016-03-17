@@ -24,7 +24,7 @@ private Animator anim;
 
     public void FixedUpdate()
     {
-        anim.SetFloat("Vspeed", Input.GetAxis("Vertical"));// Not sure if its placed correctly, check with init programmer regarding the structure of animation codes
+        //anim.SetFloat("Vspeed", Input.GetAxis("Vertical"));// Not sure if its placed correctly, check with init programmer regarding the structure of animation codes
     }   
 	public bool drawGizmos = true;
 
