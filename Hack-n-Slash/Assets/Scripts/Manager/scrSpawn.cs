@@ -9,20 +9,24 @@ public class scrSpawn : MonoBehaviour {
     [SerializeField] private Transform[] mTeleport;
     [SerializeField] private GameObject[] mPrefeb;
     [SerializeField] private GameObject mNavmesh;
+    [SerializeField] private int mMaxMonsters = 3;
 
 
     // Use this for initialization
     void Start ()
     {
        
-        int monsters = Random.Range(1, 3);
-
+        int monsters = Random.Range(1, mMaxMonsters);
+        var MyPos = gameObject.transform.position;
         for (int i = 0; i <= monsters; i++)
         {
-            Debug.Log("Spawning");
+
+            Debug.Log(transform.position);
             int tele_num = Random.Range(0, 1);
             int prefeb_num = Random.Range(0, 3);
-            Instantiate(mPrefeb[prefeb_num], mTeleport[tele_num].position, mTeleport[tele_num].rotation);
+            int ra_pos = Random.Range(-4, 4);                      
+            Instantiate(mPrefeb[prefeb_num], transform.position = new Vector3(transform.position.x + ra_pos, 0, transform.position.z + ra_pos), transform.rotation);
+            transform.position = MyPos;
         }    
 
         //DestroyObject(gameObject);
