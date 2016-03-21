@@ -11,6 +11,13 @@ public class EnemyClass : PrimeCharacterClass
     [SerializeField] private float mExp = 10;
     [SerializeField] private float mAttackCooldown = 2;
     [SerializeField] private GameObject mBlood;
+    [SerializeField] private float mMaxSpeed;
+
+    public float MaxSpeed
+    {
+        get { return mMaxSpeed; }
+        set { mMaxSpeed = value; }
+    }
 
 
     private float mStunTime;
