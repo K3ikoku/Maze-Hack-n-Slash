@@ -186,6 +186,7 @@ public class PlayerClass : PrimeCharacterClass
             Debug.Log("Player died");
             Death();
             //SceneManager.LoadScene("game_over");
+           
         }
     }
 
@@ -196,7 +197,7 @@ public class PlayerClass : PrimeCharacterClass
         Debug.Log("Player has died");
         GameObject.Destroy(gameObject);
         //Application.Quit(); //Exit game
-        UnityEngine.SceneManagement.SceneManager.LoadScene("game_over");
+        SceneManager.LoadScene("game_over");
         
     }
 
