@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerClass : PrimeCharacterClass
 {
@@ -176,6 +177,7 @@ public class PlayerClass : PrimeCharacterClass
         {
             Debug.Log("Player died");
             Death();
+            SceneManager.LoadScene("game_over");
         }
     }
 
@@ -185,7 +187,8 @@ public class PlayerClass : PrimeCharacterClass
         base.Death();
         Debug.Log("Player has died");
         GameObject.Destroy(gameObject);
-        Application.Quit(); //Exit game
+        //Application.Quit(); //Exit game
+        SceneManager.LoadScene("game_over");
 
 
     }
