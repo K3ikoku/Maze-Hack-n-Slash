@@ -147,9 +147,17 @@ public class PlayerClass : PrimeCharacterClass
             
             transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f) , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
         }
+        //Calling the shooting script 
+        if (Input.GetMouseButton(0) && mAttackTimer <= 0)
+        {
+            mAttackTimer = mAttackCooldown;
+
+            transform.GetComponentInChildren<Shooting>().Attack((Damage * 1.25f),mSelfTag, mOtherTag);// going to add the player damage here
+        }
+
 
         // If the player takes damage flash the red color over the screen
-        if(mDamaged)
+        if (mDamaged)
         {
             mDamageImage.color = new Color(1f, 0f, 0f, 0.1f);
         }

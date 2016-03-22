@@ -16,22 +16,14 @@ public class LevelGenerator : MonoBehaviour {
     public List <Vector3> mCreatedTiles;
 
     [SerializeField] private bool mEnableRandom = false;
-
-    [SerializeField]
-    private int mRandomSeed = 1337;
-    [SerializeField]
-    private int mTileAmount = 40;
-    [SerializeField]
-    private int mTileSize = 16;
-
-    [SerializeField]
-    private float mChanceUp = 0.25f;
-    [SerializeField]
-    private float mChanceRight = 0.5f;
-    [SerializeField]
-    private float mChanceLeft = 0.75f;
-    [SerializeField]
-    private float mWaitTime;
+    [SerializeField] private int mRandomSeed = 1337;
+    [SerializeField] private int mTileAmount = 40;
+    [SerializeField] private int mTileSize = 16;
+    [SerializeField] private float mChanceUp = 0.25f;
+    [SerializeField] private float mChanceRight = 0.5f;
+    [SerializeField] private float mChanceLeft = 0.75f;
+    [SerializeField] private float mWaitTime;
+    [SerializeField] private float mLevelBounds = 100f;
 
     private NavmeshManager mNavManager;
 
@@ -42,14 +34,11 @@ public class LevelGenerator : MonoBehaviour {
     private float mMaxZ = 0;
     private float mAmountX;
     private float mAmountZ;
-    [SerializeField]
-    private float mExtraWallX = 20;
-    [SerializeField]
-    private float mExtraWallZ = 20;
+    [SerializeField] private float mExtraWallX = 20;
+    [SerializeField] private float mExtraWallZ = 20;
 
     //Character generation
-    [SerializeField]
-    private int mMonsterSpawn = 5;
+    [SerializeField] private int mMonsterSpawn = 5;
 
     void Start()
     {
@@ -95,23 +84,48 @@ public class LevelGenerator : MonoBehaviour {
 
     void CallMoveGen(float ranDir)
     {
-        if(ranDir < mChanceUp)
+        if (transform.position.x > -mLevelBounds && transform.position.x < mLevelBounds && transform.position.z > -mLevelBounds && transform.position.z < mLevelBounds)
+        {
+            if (ranDir < mChanceUp)
+            {
+                MoveGen(0);
+            }
+            else if (ranDir < mChanceRight)
+            {
+
+                MoveGen(1);
+            }
+            else if (ranDir < mChanceLeft)
+            {
+
+                MoveGen(2);
+            }
+            else
+            {
+                MoveGen(3);
+            }
+        }
+        else if (transform.position.z <= -mLevelBounds)
         {
             MoveGen(0);
-        }else if(ranDir < mChanceRight)
-        {
 
-            MoveGen(1);
         }
-        else if (ranDir < mChanceLeft)
-        {
-
-            MoveGen(2);
-        }else
+        else if (transform.position.z >= mLevelBounds)
         {
             MoveGen(3);
         }
-
+        else if (transform.position.x <= -mLevelBounds)
+        {
+            MoveGen(1);
+        }
+        else if (transform.position.x >= mLevelBounds)
+        {
+            MoveGen(2);
+        }
+        else
+        {
+            Debug.Log("Error");
+        }
     }
 
 
@@ -154,7 +168,8 @@ public class LevelGenerator : MonoBehaviour {
 
     void CreateTile(int tileIndex)
     {
-        if (!mCreatedTiles.Contains(transform.position))
+        //trying to change shit here!
+        if (!mCreatedTiles.Contains(transform.position)/*&& transform.position.x > -mLevelBounds && transform.position.x < mLevelBounds && transform.position.z > -mLevelBounds && transform.position.z < mLevelBounds*/)
         {
             GameObject tileObject;
 
