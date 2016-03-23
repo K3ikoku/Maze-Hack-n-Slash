@@ -143,6 +143,13 @@ public class PlayerClass : PrimeCharacterClass
             mAttackTimer -= Time.deltaTime;
             
         }
+
+        if (Input.GetMouseButton(0) && mAttackTimer <=0)
+        {
+            mAttackTimer = mAttackCooldown;
+            transform.GetComponentInChildren<Shooting>().Attack((Damage), mSelfTag, mOtherTag);
+        }
+
         //Call script from weapon who is a child object to the player!
         if (Input.GetKey(KeyCode.F) && mAttackTimer <= 0)
         {

@@ -62,7 +62,7 @@ public class MovementScript : MonoBehaviour {
         if (!mIsAttacking && mMoveSpeed < mMaxSpeed)
         {
             mMoveSpeed += Time.deltaTime * mMoveIncrementation;
-            Debug.Log(mMoveSpeed);
+            //Debug.Log(mMoveSpeed);
             if (mMoveSpeed > mMaxSpeed)
                 mMoveSpeed = mMaxSpeed;
         }
