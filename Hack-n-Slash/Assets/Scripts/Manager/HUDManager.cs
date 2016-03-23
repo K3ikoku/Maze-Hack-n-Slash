@@ -10,7 +10,10 @@ public class HUDManager : MonoBehaviour
     private float mHPPercentage;
     private float mXPPercentage;
 
-
+    public void FixHud()
+    {
+        mPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClass>();
+    }
     // Update is called once per frame
     void Update ()
     {

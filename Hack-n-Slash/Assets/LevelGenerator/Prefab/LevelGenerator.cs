@@ -9,6 +9,7 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField] private GameObject[] mTiles;
     [SerializeField] private GameObject mWall;
     [SerializeField] private GameObject mPlayer;
+    [SerializeField] private GameObject mPlayerCall;
     [SerializeField] private GameObject mEnemy;
     [SerializeField] private GameObject mExit;
     [SerializeField] private GameObject mNavmesh;
@@ -197,9 +198,17 @@ public class LevelGenerator : MonoBehaviour {
 
     void PlaceCharacter()
     {
-
+        var Character = GameObject.FindGameObjectWithTag("Player");
         transform.position = mCreatedTiles[0];
-        Instantiate(mPlayer, transform.position, transform.rotation);
+        if (Character != null)
+        {
+            Instantiate(mPlayerCall, transform.position, transform.rotation);
+        }
+        else
+        {
+            Instantiate(mPlayer, transform.position, transform.rotation);
+        }
+        
         transform.position = mCreatedTiles[mCreatedTiles.Count - 1];
         Instantiate(mExit, transform.position, transform.rotation);
 

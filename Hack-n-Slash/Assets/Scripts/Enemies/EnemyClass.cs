@@ -26,6 +26,7 @@ public class EnemyClass : PrimeCharacterClass
     private string mSelfTag;
     private string mOtherTag;
     private PlayerClass mPlayer;
+    private Win_condition mManager;
     private Pathfinding.RichAI mRichAi;
 
     
@@ -58,9 +59,9 @@ public class EnemyClass : PrimeCharacterClass
         mEHealth = mHealth;
         mCurrentHealth = mEHealth;
         mPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClass>();
-
+        mManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Win_condition>();
         mRichAi = GetComponent<Pathfinding.RichAI>();
-        
+        mManager.EnemiesLeft = 1;
 
     }
 
@@ -141,9 +142,9 @@ public class EnemyClass : PrimeCharacterClass
     // Johan Jansson
     public override void Death()
     {
-        GameObject.Destroy(gameObject);
+        mManager.EnemiesLeft = -1;
         mPlayer.Experience = mExp;
         Debug.Log("Enemy died giving the player " + mExp);
-
+        GameObject.Destroy(gameObject);
     }
 }

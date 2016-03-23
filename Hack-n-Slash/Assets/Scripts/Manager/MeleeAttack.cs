@@ -10,7 +10,7 @@ public class MeleeAttack : MonoBehaviour {
     private string mOtherTag;
     private float mMeleeRange = 1.5f;
     private float mMeleeDamage;
-    private int mChance = Random.Range(3,5);
+    private int mChance; 
     //private float mAttackTimer = 0;
 
     public void Attack (float damage, float range, string self, string other)
@@ -27,6 +27,7 @@ public class MeleeAttack : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
+        
     }
 	
 	// Update is called once per frame
@@ -47,6 +48,7 @@ public class MeleeAttack : MonoBehaviour {
         //Debug.Log("my tag is " + mSelfTag + " other tag is " + mOtherTag);
         Collider[] colliders = Physics.OverlapSphere(transform.position, mMeleeRange);
         
+
         foreach (Collider hit in colliders)
         {
 
@@ -55,12 +57,13 @@ public class MeleeAttack : MonoBehaviour {
                 float distance = Vector3.Distance(hit.transform.position, transform.position);
                 Vector3 dir = (hit.transform.position - transform.position).normalized;
                 float direction = Vector3.Dot(dir, transform.forward);
-                
-
+               
                 if (distance < mAttackRange && direction > mAttackArc && mOtherTag == "Enemy")
                     {
+                        mChance = Random.Range(3, 5);
                         EnemyClass mEnemy = hit.transform.GetComponentInParent<EnemyClass>();
                         mEnemy.TakeDamage(mMeleeDamage, mChance);
+                        Debug.Log("numbers i got is "+mChance);
                         
                     }
                 if (distance < mAttackRange && direction > mAttackArc && mOtherTag == "Player")

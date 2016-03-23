@@ -7,6 +7,12 @@ TagManager:
   - Bullet
   - Enemy
   - Portal
+  - Manager
+  - HealthBar
+  - ExperienceBar
+  - LvlText
+  - DmgText
+  - HUD
   layers:
   - Default
   - TransparentFX

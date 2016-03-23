@@ -39,7 +39,7 @@ public class PlayerClass : PrimeCharacterClass
     {
         get { return mExperience; }
 
-        set { mExperience = value; }
+        set { mExperience += value; }
     }
     
     public float ExpToLevelUp
@@ -78,6 +78,12 @@ public class PlayerClass : PrimeCharacterClass
 
     void Awake()
     {
+        GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManager>().FixHud();
+        mLvlText = GameObject.FindGameObjectWithTag("LvlText").GetComponent<Text>();
+        mDamageImage = GameObject.FindGameObjectWithTag("DmgText").GetComponent<Image>();
+        DontDestroyOnLoad(transform.gameObject);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().FixCamera();
+
         //Sebastian
         mSelfTag = gameObject.transform.tag;
 
@@ -97,6 +103,13 @@ public class PlayerClass : PrimeCharacterClass
         mAudio = GetComponent<AudioSource>();
         mAnim = GetComponent<Animator>();
 
+    }
+
+    void OnLevelWasLoaded ()
+    {
+        GameObject.FindGameObjectWithTag("HUD").GetComponent<HUDManager>().FixHud();
+        mLvlText = GameObject.FindGameObjectWithTag("LvlText").GetComponent<Text>();
+        mDamageImage = GameObject.FindGameObjectWithTag("DmgText").GetComponent<Image>();
     }
 
 	// Use this for initialization

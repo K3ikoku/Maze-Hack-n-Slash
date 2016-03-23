@@ -12,8 +12,11 @@ public class CameraFollow : MonoBehaviour
 
     Vector3 mOffset;
 
+    
+
     public void FixCamera()
     {
+        mTarget = GameObject.FindGameObjectWithTag("Player").transform;
         //Set the offset of the camera to the standard location above the player
         mOffset = transform.position - mTarget.position;
     }
