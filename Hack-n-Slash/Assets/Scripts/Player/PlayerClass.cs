@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerClass : PrimeCharacterClass
 {
@@ -27,6 +26,8 @@ public class PlayerClass : PrimeCharacterClass
     private string mOtherTag;
     private bool mIsAttacking;
     private bool mDamaged;
+
+    private Animator mAnim;
 
     public float MovementSpeed
     {
@@ -94,6 +95,7 @@ public class PlayerClass : PrimeCharacterClass
         mBaseDamage = mDamage;
         CurrentHealth = MaxHealth;
         mAudio = GetComponent<AudioSource>();
+        mAnim = GetComponent<Animator>();
 
     }
 
@@ -144,21 +146,15 @@ public class PlayerClass : PrimeCharacterClass
         //Call script from weapon who is a child object to the player!
         if (Input.GetKey(KeyCode.F) && mAttackTimer <= 0)
         {
+
+            mAnim.SetTrigger("Atack");
             mAttackTimer = mAttackCooldown;
             
             transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f) , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
         }
-        //Calling the shooting script 
-        if (Input.GetMouseButton(0) && mAttackTimer <= 0)
-        {
-            mAttackTimer = mAttackCooldown;
-
-            transform.GetComponentInChildren<Shooting>().Attack((Damage * 1.25f),mSelfTag, mOtherTag);// going to add the player damage here
-        }
-
 
         // If the player takes damage flash the red color over the screen
-        if (mDamaged)
+        if(mDamaged)
         {
             mDamageImage.color = new Color(1f, 0f, 0f, 0.1f);
         }
@@ -175,6 +171,8 @@ public class PlayerClass : PrimeCharacterClass
     {
         base.TakeDamage(damage, chance);
 
+        mAnim.SetTrigger("Hit");
+
         mDamaged = true;
 
         Debug.Log("The player took " + damage + " damage"); // Print out amount of damage taken
@@ -183,9 +181,9 @@ public class PlayerClass : PrimeCharacterClass
         // Check if the players hp is larger than 0 and run death script if not
         if(mCurrentHealth <= 0)
         {
+            mAnim.SetTrigger("Death");
             Debug.Log("Player died");
             Death();
-            SceneManager.LoadScene("game_over");
         }
     }
 
@@ -194,9 +192,8 @@ public class PlayerClass : PrimeCharacterClass
     {
         base.Death();
         Debug.Log("Player has died");
-        GameObject.Destroy(gameObject);
-        //Application.Quit(); //Exit game
-        SceneManager.LoadScene("game_over");
+        ////GameObject.Destroy(gameObject);
+        ////Application.Quit(); //Exit game
 
 
     }

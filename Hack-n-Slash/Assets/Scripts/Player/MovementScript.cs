@@ -11,7 +11,7 @@ public class MovementScript : MonoBehaviour {
     [SerializeField] private float mMaxSpeed;
     [SerializeField] private float mMoveIncrementation;
 
-    private Animator anim;
+    private Animator mAnim;
 
     private float mCamRayLength = 100f;
     private int mFloorMask;
@@ -27,7 +27,7 @@ public class MovementScript : MonoBehaviour {
     void Awake()
     {
         mFloorMask = LayerMask.GetMask("Floor");
-        anim = GetComponent<Animator>();
+        mAnim = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,6 +35,7 @@ public class MovementScript : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
         {
             mIsAttacking = true;
+            
         }
         if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.F))
         {
@@ -97,8 +98,8 @@ public class MovementScript : MonoBehaviour {
 
         mPlayerRigidbody.MovePosition(transform.position + mMovement);
 
-        anim.SetFloat("Vspeed", Input.GetAxis("Vertical"));
-        anim.SetFloat("Hspeed", Input.GetAxis("Horizontal"));
+        mAnim.SetFloat("Vspeed", Input.GetAxis("Vertical"));
+        mAnim.SetFloat("Hspeed", Input.GetAxis("Horizontal"));
 
 
     }
