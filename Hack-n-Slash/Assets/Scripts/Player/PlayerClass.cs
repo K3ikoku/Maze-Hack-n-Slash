@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerClass : PrimeCharacterClass
 {
@@ -14,6 +15,8 @@ public class PlayerClass : PrimeCharacterClass
     [SerializeField] private float mBaseDamage;
     [SerializeField] private float mAttackCooldown = 0.5f;
     [SerializeField] private Image mDamageImage;
+    [SerializeField] private float mDeathTimer;
+
 
 
     private float mDmgBuff;
@@ -26,6 +29,7 @@ public class PlayerClass : PrimeCharacterClass
     private string mOtherTag;
     private bool mIsAttacking;
     private bool mDamaged;
+    private bool mDead = false;
 
     private Animator mAnim;
 
@@ -186,6 +190,23 @@ public class PlayerClass : PrimeCharacterClass
 
 
     }
+
+    void LateUpdate()
+    {
+        if (mDead)
+        {
+            if (mDeathTimer >= 2f)
+            {
+                SceneManager.LoadScene("game_over");
+            }
+            else
+            {
+                mDeathTimer += Time.deltaTime * 1;
+            }
+        }
+    }
+
+
     // Gustaf Wall
     public override void TakeDamage(float damage, int chance) // Override parents Take damage function
     {
@@ -212,6 +233,8 @@ public class PlayerClass : PrimeCharacterClass
     {
         base.Death();
         Debug.Log("Player has died");
+        mDead = true;
+        
         ////GameObject.Destroy(gameObject);
         ////Application.Quit(); //Exit game
 

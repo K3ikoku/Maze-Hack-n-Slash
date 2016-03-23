@@ -183,7 +183,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 492144, guid: ecbee197773f8944a870afd5f7097c37, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11467952, guid: ecbee197773f8944a870afd5f7097c37, type: 2}
       propertyPath: mNavmesh
@@ -205,6 +205,10 @@ Prefab:
       propertyPath: mPlayer
       value: 
       objectReference: {fileID: 100728, guid: 07848279fda51d945beb0588e540bee6, type: 2}
+    - target: {fileID: 11467952, guid: ecbee197773f8944a870afd5f7097c37, type: 2}
+      propertyPath: mTiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbee197773f8944a870afd5f7097c37, type: 2}
   m_IsPrefabParent: 0
