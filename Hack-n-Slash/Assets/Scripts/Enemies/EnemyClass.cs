@@ -97,14 +97,14 @@ public class EnemyClass : PrimeCharacterClass
         {
             PlayerClass mPlayer = other.transform.GetComponent<PlayerClass>();
 
-            mPlayer.TakeDamage(10);
+            mPlayer.TakeDamage(10,0);
         }
     }
 
 
       
     //Take damage funktion called from objects causing damage
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, int chance)
     {
         Vector3 mBloodPos = transform.position;
         mBloodPos.z += 0.2f;
@@ -114,9 +114,16 @@ public class EnemyClass : PrimeCharacterClass
         {
             mRichAi.StartChasing();
         }
+        if (chance >= 4)
+        {
+            mStunTime = mStunDur;
+            Debug.Log("Stunned");
 
-        mStunTime = mStunDur;
-        base.TakeDamage(damage);
+        }
+
+
+        
+        base.TakeDamage(damage, chance);
         //mEmunity = 1;
         Debug.Log("The enemy took " + damage + " damage");
         //mWaitTime = Time.deltaTime;

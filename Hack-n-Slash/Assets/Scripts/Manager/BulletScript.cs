@@ -3,8 +3,9 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour
 {
-    float mDamage;
-    string mTarget;
+    private float mDamage;
+    private string mTarget;
+    private int mChance = Random.Range(0, 5);
     
     
 	// Use this for initialization
@@ -26,13 +27,13 @@ public class BulletScript : MonoBehaviour
             if (mTarget == "Enemy")
             {
                 var Enemy = other.transform.GetComponentInParent<EnemyClass>();
-                Enemy.TakeDamage(mDamage);
+                Enemy.TakeDamage(mDamage,mChance);
                 DestroyObject(gameObject);
             }
             if (mTarget == "Player")
             {
                 var Player = other.transform.GetComponent<PlayerClass>();
-                Player.TakeDamage(mDamage);
+                Player.TakeDamage(mDamage,0);
                 DestroyObject(gameObject);
 
             }

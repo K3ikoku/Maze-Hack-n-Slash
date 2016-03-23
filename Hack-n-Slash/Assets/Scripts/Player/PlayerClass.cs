@@ -171,9 +171,9 @@ public class PlayerClass : PrimeCharacterClass
 
     }
     // Gustaf Wall
-    public override void TakeDamage(float damage) // Override parents Take damage function
+    public override void TakeDamage(float damage, int chance) // Override parents Take damage function
     {
-        base.TakeDamage(damage);
+        base.TakeDamage(damage, chance);
 
         mDamaged = true;
 

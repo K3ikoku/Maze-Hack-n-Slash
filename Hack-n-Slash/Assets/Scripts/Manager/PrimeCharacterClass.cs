@@ -8,7 +8,7 @@ public class PrimeCharacterClass : MonoBehaviour
     [SerializeField]protected float mDamage = 20;
     [SerializeField]protected float mMovementSpeed = 6;
     
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, int chance)
     {
     }
 

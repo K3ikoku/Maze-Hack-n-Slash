@@ -43,10 +43,13 @@ MonoBehaviour:
   - {fileID: 131746, guid: 0f51316ccefe3a04fb9b1b9789ff442d, type: 2}
   - {fileID: 114398, guid: 27c379fde11f87545ac3afa544ac11c9, type: 2}
   - {fileID: 142576, guid: 0e3d3c5439a0d58429a29065b5f14687, type: 2}
+  - {fileID: 165196, guid: 22df315c5a4b4d64b9dd3ca9ecd0c950, type: 2}
+  - {fileID: 165620, guid: 167423abf40362c41acbed4ff7e2ac27, type: 2}
   mWall: {fileID: 116460, guid: 6e6e9724bdccd9543a147507a5c07712, type: 2}
-  mPlayer: {fileID: 165520, guid: 1451fc7fccf8e504b81ac93f26e04be5, type: 2}
-  mEnemy: {fileID: 165520, guid: 1451fc7fccf8e504b81ac93f26e04be5, type: 2}
-  mExit: {fileID: 165520, guid: 1451fc7fccf8e504b81ac93f26e04be5, type: 2}
+  mPlayer: {fileID: 130956, guid: 0db279731adf9534f8f92fbaa656fde6, type: 2}
+  mEnemy: {fileID: 133828, guid: 7c41f676f5a413048bca5e71683caa22, type: 2}
+  mExit: {fileID: 153280, guid: 16d34d5ae95efc34f84786ab5d6d1372, type: 2}
+  mNavmesh: {fileID: 0}
   mCreatedTiles: []
   mEnableRandom: 0
   mRandomSeed: 1337
@@ -56,8 +59,9 @@ MonoBehaviour:
   mChanceRight: 0.5
   mChanceLeft: 0.75
   mWaitTime: 0
-  mExtraWallX: 20
-  mExtraWallZ: 20
+  mLevelBounds: 100
+  mExtraWallX: 8
+  mExtraWallZ: 8
   mMonsterSpawn: 5
 --- !u!1001 &100100000
 Prefab:
