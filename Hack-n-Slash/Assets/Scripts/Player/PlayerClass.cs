@@ -27,6 +27,8 @@ public class PlayerClass : PrimeCharacterClass
     private bool mIsAttacking;
     private bool mDamaged;
 
+    private Animator mAnim;
+
     public float MovementSpeed
     {
         get { return mMovementSpeed; }
@@ -93,6 +95,7 @@ public class PlayerClass : PrimeCharacterClass
         mBaseDamage = mDamage;
         CurrentHealth = MaxHealth;
         mAudio = GetComponent<AudioSource>();
+        mAnim = GetComponent<Animator>();
 
     }
 
@@ -143,6 +146,8 @@ public class PlayerClass : PrimeCharacterClass
         //Call script from weapon who is a child object to the player!
         if (Input.GetKey(KeyCode.F) && mAttackTimer <= 0)
         {
+
+            mAnim.SetTrigger("Atack");
             mAttackTimer = mAttackCooldown;
             
             transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f) , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
@@ -166,6 +171,8 @@ public class PlayerClass : PrimeCharacterClass
     {
         base.TakeDamage(damage);
 
+        mAnim.SetTrigger("Hit");
+
         mDamaged = true;
 
         Debug.Log("The player took " + damage + " damage"); // Print out amount of damage taken
@@ -174,6 +181,7 @@ public class PlayerClass : PrimeCharacterClass
         // Check if the players hp is larger than 0 and run death script if not
         if(mCurrentHealth <= 0)
         {
+            mAnim.SetTrigger("Death");
             Debug.Log("Player died");
             Death();
         }
@@ -184,8 +192,8 @@ public class PlayerClass : PrimeCharacterClass
     {
         base.Death();
         Debug.Log("Player has died");
-        GameObject.Destroy(gameObject);
-        Application.Quit(); //Exit game
+        ////GameObject.Destroy(gameObject);
+        ////Application.Quit(); //Exit game
 
 
     }
