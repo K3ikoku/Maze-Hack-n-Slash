@@ -13,6 +13,7 @@ TagManager:
   - LvlText
   - DmgText
   - HUD
+  - Install
   layers:
   - Default
   - TransparentFX
