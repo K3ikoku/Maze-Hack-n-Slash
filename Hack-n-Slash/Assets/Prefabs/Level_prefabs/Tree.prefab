@@ -47,7 +47,7 @@ GameObject:
   - 64: {fileID: 6401946}
   - 23: {fileID: 2311610}
   m_Layer: 8
-  m_Name: Tree - Johnny
+  m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
