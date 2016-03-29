@@ -40,14 +40,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTiles:
-  - {fileID: 131746, guid: 0f51316ccefe3a04fb9b1b9789ff442d, type: 2}
-  - {fileID: 114398, guid: 27c379fde11f87545ac3afa544ac11c9, type: 2}
-  - {fileID: 142576, guid: 0e3d3c5439a0d58429a29065b5f14687, type: 2}
-  - {fileID: 0}
-  - {fileID: 165620, guid: 167423abf40362c41acbed4ff7e2ac27, type: 2}
+  - {fileID: 159928, guid: 3e819f67ac09f284f850bfac346cb0b8, type: 2}
+  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
+  - {fileID: 149548, guid: f6758f2730fea0549a7b438bb96287be, type: 2}
+  - {fileID: 188224, guid: e6f7ca423fa97334d8d17578d653549e, type: 2}
+  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
+  - {fileID: 116900, guid: 6fb4531f5aebd2e47bb4898c2baa5614, type: 2}
+  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
+  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
+  - {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
   mWall: {fileID: 116460, guid: 6e6e9724bdccd9543a147507a5c07712, type: 2}
-  mPlayer: {fileID: 130956, guid: 0db279731adf9534f8f92fbaa656fde6, type: 2}
+  mPlayer: {fileID: 100728, guid: 07848279fda51d945beb0588e540bee6, type: 2}
+  mPlayerCall: {fileID: 130956, guid: 0db279731adf9534f8f92fbaa656fde6, type: 2}
   mEnemy: {fileID: 133828, guid: 7c41f676f5a413048bca5e71683caa22, type: 2}
+  mManager: {fileID: 130156, guid: 70a9822815ab98c47b0519e7a6ee4e78, type: 2}
   mExit: {fileID: 192176, guid: bfa974d71a48e28478b6ff0e010b825c, type: 2}
   mNavmesh: {fileID: 0}
   mCreatedTiles: []
@@ -62,7 +68,7 @@ MonoBehaviour:
   mLevelBounds: 100
   mExtraWallX: 8
   mExtraWallZ: 8
-  mMonsterSpawn: 5
+  mMonsterSpawn: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

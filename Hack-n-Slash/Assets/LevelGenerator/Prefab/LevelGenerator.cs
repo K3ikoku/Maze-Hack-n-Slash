@@ -11,10 +11,11 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField] private GameObject mPlayer;
     [SerializeField] private GameObject mPlayerCall;
     [SerializeField] private GameObject mEnemy;
+    [SerializeField] private GameObject mManager;
     [SerializeField] private GameObject mExit;
     [SerializeField] private GameObject mNavmesh;
 
-    public List <Vector3> mCreatedTiles;
+    public List<Vector3> mCreatedTiles;
 
     [SerializeField] private bool mEnableRandom = false;
     [SerializeField] private int mRandomSeed = 1337;
@@ -41,6 +42,38 @@ public class LevelGenerator : MonoBehaviour {
     //Character generation
     [SerializeField] private int mMonsterSpawn = 5;
 
+    void Awake()
+    {
+        mNavManager = mNavmesh.GetComponent<NavmeshManager>();
+        if (!GameObject.FindGameObjectWithTag("Install"))
+        {
+            Debug.Log("Object does not exist");
+        }
+
+        else
+        {
+            var Install = GameObject.FindGameObjectWithTag("Install").GetComponent<Installations>();
+
+
+            if (Install != null)
+            {
+                mMonsterSpawn += Install.Level;
+                if (mMonsterSpawn >= 10)
+                {
+                    mMonsterSpawn = 10;
+
+                }
+
+                mTileAmount += Install.Level * 5;
+                if (mTileAmount >= 140)
+                {
+                    mTileAmount = 140;
+                }
+            }
+        }
+        Debug.Log("Monsterspawn is " + mMonsterSpawn);
+    }
+
     void Start()
     {
 
@@ -51,10 +84,7 @@ public class LevelGenerator : MonoBehaviour {
         }
     }
 
-    void Awake()
-    {
-        mNavManager = mNavmesh.GetComponent<NavmeshManager>();
-    }
+   
 
     IEnumerator GenerateLevel()
     {
@@ -203,9 +233,11 @@ public class LevelGenerator : MonoBehaviour {
         if (Character != null)
         {
             Instantiate(mPlayerCall, transform.position, transform.rotation);
+            
         }
         else
         {
+            Instantiate(mManager, transform.position, transform.rotation);
             Instantiate(mPlayer, transform.position, transform.rotation);
         }
         
