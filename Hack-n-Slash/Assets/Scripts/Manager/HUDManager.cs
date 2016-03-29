@@ -21,7 +21,7 @@ public class HUDManager : MonoBehaviour
         mHPPercentage = mPlayer.CurrentHealth / mPlayer.MaxHealth;
         mHPPercentage *= 100;
 
-        mHPBar.rectTransform.sizeDelta = new Vector2(mHPPercentage, 100); // Change the size of the healthbar based on current hp
+        mHPBar.rectTransform.sizeDelta = new Vector2( mHPPercentage, 100); // Change the size of the healthbar based on current hp
 
         //Check the xp of the player and the xp needed for next level up
         mXPPercentage = mPlayer.Experience / mPlayer.ExpToLevelUp;
