@@ -29,7 +29,7 @@ public class EnemyClass : PrimeCharacterClass
     private Win_condition mManager;
     private Pathfinding.RichAI mRichAi;
 
-    
+    private Animator mAnim;
 
 
     public float Health
@@ -62,6 +62,7 @@ public class EnemyClass : PrimeCharacterClass
         mManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Win_condition>();
         mRichAi = GetComponent<Pathfinding.RichAI>();
         mManager.EnemiesLeft = 1;
+        mAnim = GetComponent<Animator>();
 
     }
 
@@ -87,6 +88,7 @@ public class EnemyClass : PrimeCharacterClass
             mAttackTimer = mAttackCooldown;
 
             transform.GetComponentInChildren<MeleeAttack>().Attack(10, 1.5f, mSelfTag, mOtherTag);// going to add the player damage here
+            mAnim.SetTrigger("EnemyAttack");
         }
 
     }
@@ -99,6 +101,7 @@ public class EnemyClass : PrimeCharacterClass
             PlayerClass mPlayer = other.transform.GetComponent<PlayerClass>();
 
             mPlayer.TakeDamage(10,0);
+            mAnim.SetTrigger("EnemyGetHit");
         }
     }
 
@@ -134,6 +137,7 @@ public class EnemyClass : PrimeCharacterClass
 
         if (mCurrentHealth <= 0) //Check if current health is 0 or less and run Death function if true
         {
+            mAnim.SetTrigger("EnemyDeath");
             Debug.Log("Enemy died");
             Death();
         }
