@@ -2213,16 +2213,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5243ab915a77b04488921c8fbd988d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mHealth: 100
-  mDamage: 20
+  mHealth: 140
+  mDamage: 25
   mMovementSpeed: 6
   mEHealth: 0
   mCurrentHealth: 0
   mWaitTime: 1
-  mEmunity: 0
-  mExp: 10
-  mAttackCooldown: 2
+  mExp: 30
+  mAttackCooldown: 1
   mBlood: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
+  mMaxSpeed: 0
+  mHealtBoost: 20
 --- !u!114 &11478252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2682,6 +2683,26 @@ Prefab:
       value: 
       objectReference: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: mHealth
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mAttackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mHealtBoost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mDamage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mExp
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156840}

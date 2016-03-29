@@ -7,11 +7,11 @@ public class EnemyClass : PrimeCharacterClass
     [SerializeField] private float mEHealth;
     [SerializeField] private float mCurrentHealth;
     [SerializeField] private float mWaitTime = 1;
-    [SerializeField] private int mEmunity = 0;
     [SerializeField] private float mExp = 10;
     [SerializeField] private float mAttackCooldown = 2;
     [SerializeField] private GameObject mBlood;
     [SerializeField] private float mMaxSpeed;
+    [SerializeField] private int mHealtBoost = 25;
 
     public float MaxSpeed
     {
@@ -45,6 +45,7 @@ public class EnemyClass : PrimeCharacterClass
     void Awake()
     {
         //Sebastian
+        var Install = GameObject.FindGameObjectWithTag("Install").GetComponent<Installations>();
         mSelfTag = gameObject.transform.tag;
 
         if (mSelfTag == "Player")
@@ -56,8 +57,9 @@ public class EnemyClass : PrimeCharacterClass
             mOtherTag = "Player";
         }
         // end Sebastian
-        mEHealth = mHealth;
+        mEHealth = mHealth + (Install.Level * mHealtBoost-mHealtBoost);
         mCurrentHealth = mEHealth;
+        Debug.Log(mEHealth +" Level is "+ Install.Level);
         mPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerClass>();
         mManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Win_condition>();
         mRichAi = GetComponent<Pathfinding.RichAI>();
@@ -94,7 +96,7 @@ public class EnemyClass : PrimeCharacterClass
 
     void OnCollider(Collision other)
     {
-        if (other.transform.tag == "Player" /*&& mEmunity == 0*/)
+        if (other.transform.tag == "Player")
         {
             PlayerClass mPlayer = other.transform.GetComponent<PlayerClass>();
 
@@ -121,15 +123,9 @@ public class EnemyClass : PrimeCharacterClass
             Debug.Log("Stunned");
 
         }
-
-
-        
+                
         base.TakeDamage(damage, chance);
-        //mEmunity = 1;
-        Debug.Log("The enemy took " + damage + " damage");
-        //mWaitTime = Time.deltaTime;
-        //mEmunity = 0;
-
+        Debug.Log("The enemy took " + damage + " damage"); 
         mCurrentHealth -= damage; //Subtract the damage dealt from the current health
 
         if (mCurrentHealth <= 0) //Check if current health is 0 or less and run Death function if true

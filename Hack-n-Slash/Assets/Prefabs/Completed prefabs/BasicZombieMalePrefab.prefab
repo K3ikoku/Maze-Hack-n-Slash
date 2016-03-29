@@ -2212,16 +2212,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5243ab915a77b04488921c8fbd988d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mHealth: 100
-  mDamage: 20
+  mHealth: 80
+  mDamage: 15
   mMovementSpeed: 6
   mEHealth: 0
   mCurrentHealth: 0
   mWaitTime: 1
-  mEmunity: 0
-  mExp: 10
-  mAttackCooldown: 2
+  mExp: 25
+  mAttackCooldown: 1
   mBlood: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
+  mMaxSpeed: 0
+  mHealtBoost: 10
 --- !u!114 &11475262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2250,7 +2251,7 @@ MonoBehaviour:
   drawGizmos: 1
   repeatedlySearchPaths: 1
   repathRate: 0.5
-  maxSpeed: 6
+  maxSpeed: 12
   acceleration: 5
   slowdownTime: 0.5
   rotationSpeed: 360
@@ -2610,6 +2611,30 @@ Prefab:
       value: 
       objectReference: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: mHealth
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mAttackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mExp
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mHealtBoost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136668}

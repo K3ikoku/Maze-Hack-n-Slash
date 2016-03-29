@@ -2307,10 +2307,11 @@ MonoBehaviour:
   mEHealth: 0
   mCurrentHealth: 0
   mWaitTime: 1
-  mEmunity: 0
-  mExp: 30
+  mExp: 50
   mAttackCooldown: 2
   mBlood: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
+  mMaxSpeed: 0
+  mHealtBoost: 50
 --- !u!114 &11497042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2784,7 +2785,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: mExp
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: mMovementSpeed
@@ -2799,6 +2800,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11472204, guid: 07848279fda51d945beb0588e540bee6,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: mHealtBoost
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119522}
