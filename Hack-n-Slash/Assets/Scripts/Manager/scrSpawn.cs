@@ -28,17 +28,21 @@ public class scrSpawn : MonoBehaviour {
             int ra_pos = Random.Range(-4, 4);
             transform.position = new Vector3(transform.position.x + ra_pos, 0, transform.position.z + ra_pos);
             CollisionCheck(gameObject.transform.position,1f);
-            if (mOverlap == false)
-            {
-                
-                Instantiate(mPrefeb[prefeb_num],transform.position, transform.rotation);
-            }
-            else
-            {
-                monsters++;
-                Debug.Log("i skipt monster = "+monsters);
 
-            }
+            if (monsters < 50)
+                    {            
+                        if (mOverlap == false)
+                            {
+                
+                                Instantiate(mPrefeb[prefeb_num],transform.position, transform.rotation);
+                            }
+                        else
+                            {
+                                monsters++;
+                                Debug.Log("i skipt monster = "+monsters);
+                            }
+                    }
+
             transform.position = MyPos;
         }    
 
