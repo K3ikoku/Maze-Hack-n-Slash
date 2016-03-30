@@ -18,7 +18,7 @@ public class Seeker : MonoBehaviour, ISerializationCallbackReceiver {
 	 *
 	 * \see OnDrawGizmos
 	 */
-private Animator anim;
+private Animator mAnim;
 
     
 
@@ -129,7 +129,7 @@ private Animator anim;
 
 	/** Initializes a few variables */
 	void Awake () {
-        anim = GetComponent<Animator>();
+        mAnim = GetComponent<Animator>();
         startEndModifier.Awake(this);
 	}
 
