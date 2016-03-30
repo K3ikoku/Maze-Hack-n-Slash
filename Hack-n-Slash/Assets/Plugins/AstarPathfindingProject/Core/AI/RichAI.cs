@@ -68,7 +68,7 @@ namespace Pathfinding
 		 */
 		public RichFunnel.FunnelSimplification funnelSimplification = RichFunnel.FunnelSimplification.None;
         //public Animation anim;//Legacy code for animation.
-        public Animator anim; 
+        public Animator mAnim; 
         //:-)
         //public Animatior
         //public Animator
@@ -131,6 +131,7 @@ namespace Pathfinding
 			tr = transform;
             mTarget = GameObject.FindGameObjectWithTag("Player").transform;
             startHasRun = false;
+            mAnim = GetComponent<Animator>();
 
         }
 
@@ -516,7 +517,7 @@ namespace Pathfinding
 			}
 
             Debug.DrawRay(transform.position, Velocity * 1, Color.red);
-            anim.SetFloat("Vspeed", Velocity.magnitude);
+            mAnim.SetFloat("Vspeed", Velocity.magnitude);
         }
 
 		Vector3 RaycastPosition (Vector3 position, float lasty) {

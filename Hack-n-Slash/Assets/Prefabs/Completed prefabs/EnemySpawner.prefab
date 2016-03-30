@@ -90,12 +90,13 @@ MonoBehaviour:
   mTeleport:
   - {fileID: 402304}
   mPrefeb:
-  - {fileID: 170966, guid: f337e1b457d1e674baa99be331964f43, type: 2}
-  - {fileID: 139558, guid: eb2458e83657bc3448f361dd6380025f, type: 2}
-  - {fileID: 145810, guid: bbadf9583e9fb4a44b2737caa88ec223, type: 2}
-  - {fileID: 172604, guid: 96d681c2e87c2054d8b1199fddf10d10, type: 2}
+  - {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
+  - {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
+  - {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
+  - {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
   mNavmesh: {fileID: 0}
   mMaxMonsters: 3
+  mMinMonsters: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -126,19 +127,19 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[0]
       value: 
-      objectReference: {fileID: 170966, guid: f337e1b457d1e674baa99be331964f43, type: 2}
+      objectReference: {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[1]
       value: 
-      objectReference: {fileID: 139558, guid: eb2458e83657bc3448f361dd6380025f, type: 2}
+      objectReference: {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[2]
       value: 
-      objectReference: {fileID: 145810, guid: bbadf9583e9fb4a44b2737caa88ec223, type: 2}
+      objectReference: {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[3]
       value: 
-      objectReference: {fileID: 172604, guid: 96d681c2e87c2054d8b1199fddf10d10, type: 2}
+      objectReference: {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133828}
