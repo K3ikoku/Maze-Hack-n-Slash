@@ -90,10 +90,10 @@ MonoBehaviour:
   mTeleport:
   - {fileID: 402304}
   mPrefeb:
-  - {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
-  - {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
-  - {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
-  - {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
+  - {fileID: 199348, guid: f7cdfbbd3b25df240822c2e13e83f5f7, type: 2}
+  - {fileID: 185982, guid: dc133d2215ed4cd4eae59f6043ebb40a, type: 2}
+  - {fileID: 172164, guid: 20e453ac07d9e754198ae404b3726482, type: 2}
+  - {fileID: 144588, guid: b28d04f9f2b86c34e99c41d5279244de, type: 2}
   mNavmesh: {fileID: 0}
   mMaxMonsters: 3
   mMinMonsters: 1
@@ -127,19 +127,19 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[0]
       value: 
-      objectReference: {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
+      objectReference: {fileID: 199348, guid: f7cdfbbd3b25df240822c2e13e83f5f7, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[1]
       value: 
-      objectReference: {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
+      objectReference: {fileID: 185982, guid: dc133d2215ed4cd4eae59f6043ebb40a, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[2]
       value: 
-      objectReference: {fileID: 126570, guid: 225c194e390522e4fbba0569e610bb83, type: 2}
+      objectReference: {fileID: 172164, guid: 20e453ac07d9e754198ae404b3726482, type: 2}
     - target: {fileID: 0}
       propertyPath: mPrefeb.Array.data[3]
       value: 
-      objectReference: {fileID: 161928, guid: 5745dc13d2875d442a19bd42ac3bcd4d, type: 2}
+      objectReference: {fileID: 144588, guid: b28d04f9f2b86c34e99c41d5279244de, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133828}

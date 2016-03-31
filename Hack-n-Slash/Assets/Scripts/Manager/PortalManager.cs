@@ -23,6 +23,7 @@ public class PortalManager : MonoBehaviour
         if (mPortalActive == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            mPortalActive = false;
         }
     }
 }

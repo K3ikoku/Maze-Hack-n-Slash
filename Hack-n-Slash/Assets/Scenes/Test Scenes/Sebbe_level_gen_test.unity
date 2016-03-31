@@ -205,6 +205,10 @@ Prefab:
       propertyPath: mTiles.Array.data[10]
       value: 
       objectReference: {fileID: 181704, guid: e402b8f88708bda42847ecb4b4eef0e9, type: 2}
+    - target: {fileID: 11467952, guid: ecbee197773f8944a870afd5f7097c37, type: 2}
+      propertyPath: mMonsterSpawn
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbee197773f8944a870afd5f7097c37, type: 2}
   m_IsPrefabParent: 0

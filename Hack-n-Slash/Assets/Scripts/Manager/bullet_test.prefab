@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11411158}
   - 114: {fileID: 11407166}
   - 96: {fileID: 9623020}
+  - 114: {fileID: 11419248}
   m_Layer: 11
   m_Name: bullet_test
   m_TagString: Bullet
@@ -389,6 +390,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44bc21ea7e8c8442a5a181699508a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11419248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/PlayerAttackRange
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: Untagged
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Params: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -468,6 +487,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 030aabe4a65d27a4fb4b464767cb34f8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: PlayEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: StopEvent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AllowFadeout
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TriggerOnce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CollisionTag
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104484}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{d194cc00-40f4-4be4-9c75-7d1f4e648916}">
+        <property name="assetPath">
+            <value>boulder_impact_on_stones_15.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.83734693877551025</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f0c51e1b-9d38-41ef-93f1-d49661182da5}</destination>
+        </relationship>
+    </object>
+</objects>

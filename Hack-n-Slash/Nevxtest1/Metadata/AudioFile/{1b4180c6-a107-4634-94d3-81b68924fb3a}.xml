@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{1b4180c6-a107-4634-94d3-81b68924fb3a}">
+        <property name="assetPath">
+            <value>Siberian_Tiger_Calls_01.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>17.078276643990929</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f0c51e1b-9d38-41ef-93f1-d49661182da5}</destination>
+        </relationship>
+    </object>
+</objects>

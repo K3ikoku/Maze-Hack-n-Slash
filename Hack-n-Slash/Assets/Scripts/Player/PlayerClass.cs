@@ -18,6 +18,14 @@ public class PlayerClass : PrimeCharacterClass
     [SerializeField] private float mDeathTimer;
 
 
+    [FMODUnity.EventRef]
+    [SerializeField]
+    private string mSoundTakeDamage = "event:/PlayerHurt";
+
+    [FMODUnity.EventRef]
+    [SerializeField]
+    private string mSoundMeleeDamage = "event:/PlayerAttackMelee";
+
 
     private float mDmgBuff;
     private float mHpBuff;
@@ -173,14 +181,19 @@ public class PlayerClass : PrimeCharacterClass
 
             mAnim.SetTrigger("Atack");
             mAttackTimer = mAttackCooldown;
-            
-            transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f) , 1.5f , mSelfTag, mOtherTag);// going to add the player damage here
-        }
 
+            transform.GetComponentInChildren<MeleeAttack>().Attack((Damage * 1.25f), 1.5f, mSelfTag, mOtherTag);// going to add the player damage here
+
+            
+            FMODUnity.RuntimeManager.PlayOneShot(mSoundMeleeDamage, transform.position);
+
+        }
         // If the player takes damage flash the red color over the screen
         if(mDamaged)
         {
             mDamageImage.color = new Color(1f, 0f, 0f, 0.1f);
+
+            FMODUnity.RuntimeManager.PlayOneShot(mSoundTakeDamage, transform.position);
         }
         else
         {

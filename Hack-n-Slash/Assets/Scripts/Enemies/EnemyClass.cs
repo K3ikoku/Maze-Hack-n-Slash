@@ -13,6 +13,8 @@ public class EnemyClass : PrimeCharacterClass
     [SerializeField] private float mMaxSpeed;
     [SerializeField] private int mHealtBoost = 25;
 
+    [FMODUnity.EventRef]
+    [SerializeField] private string mSoundDie = "event:/EnemyDie";
     public float MaxSpeed
     {
         get { return mMaxSpeed; }
@@ -133,6 +135,7 @@ public class EnemyClass : PrimeCharacterClass
 
         if (mCurrentHealth <= 0) //Check if current health is 0 or less and run Death function if true
         {
+            FMODUnity.RuntimeManager.PlayOneShot(mSoundDie, transform.position);
             mAnim.SetTrigger("EnemyDeath");
             Debug.Log("Enemy died");
             Death();
