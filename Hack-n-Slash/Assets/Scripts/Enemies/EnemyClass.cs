@@ -137,6 +137,7 @@ public class EnemyClass : PrimeCharacterClass
         {
             FMODUnity.RuntimeManager.PlayOneShot(mSoundDie, transform.position);
             mAnim.SetTrigger("EnemyDeath");
+            StartCoroutine(StartDelay());
             Debug.Log("Enemy died");
             Death();
         }
@@ -149,5 +150,11 @@ public class EnemyClass : PrimeCharacterClass
         mPlayer.Experience = mExp;
         Debug.Log("Enemy died giving the player " + mExp);
         GameObject.Destroy(gameObject);
+    }
+
+    IEnumerator StartDelay()
+    {
+        yield return new
+     WaitForSeconds(2f);
     }
 }
