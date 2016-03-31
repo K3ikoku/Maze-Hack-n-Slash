@@ -2294,6 +2294,9 @@ MonoBehaviour:
   mBlood: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
   mMaxSpeed: 0
   mHealtBoost: 25
+  mLootChance: 10
+  mPickup: []
+  mSoundDie: event:/EnemyDie
 --- !u!114 &11485308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2323,7 +2326,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   centerOffset: 1
   funnelSimplification: 0
-  anim: {fileID: 0}
+  mAnim: {fileID: 0}
   preciseSlowdown: 1
   slowWhenNotFacingTarget: 1
 --- !u!135 &13514140

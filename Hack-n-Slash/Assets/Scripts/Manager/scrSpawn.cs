@@ -22,18 +22,18 @@ public class scrSpawn : MonoBehaviour {
         for (int i = 0; i <= monsters; i++)
         {
             mOverlap = false;
-            Debug.Log(transform.position);
+            
             int tele_num = Random.Range(0, 1);
             int prefeb_num = Random.Range(0, 3);
             int ra_pos = Random.Range(-4, 4);
             transform.position = new Vector3(transform.position.x + ra_pos, 0, transform.position.z + ra_pos);
             CollisionCheck(gameObject.transform.position,1f);
-
+            Debug.Log(transform.position);
             if (monsters < 50)
                     {            
                         if (mOverlap == false)
                             {
-                
+                                   
                                 Instantiate(mPrefeb[prefeb_num],transform.position, transform.rotation);
                             }
                         else

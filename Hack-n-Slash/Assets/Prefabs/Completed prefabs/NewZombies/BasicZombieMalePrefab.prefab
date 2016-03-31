@@ -2196,6 +2196,9 @@ MonoBehaviour:
   mBlood: {fileID: 100000, guid: 80cd87e5e66b84b35b29f75198eeda8b, type: 2}
   mMaxSpeed: 0
   mHealtBoost: 10
+  mLootChance: 10
+  mPickup:
+  - {fileID: 174110, guid: bf5aeae90b992a2429d8d3ee37e41a0c, type: 2}
   mSoundDie: event:/EnemyDie
 --- !u!114 &11439498
 MonoBehaviour:
@@ -2606,7 +2609,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: mPickup.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mPickup.Array.data[0]
+      value: 
+      objectReference: {fileID: 174110, guid: bf5aeae90b992a2429d8d3ee37e41a0c, type: 2}
+    - target: {fileID: 0}
+      propertyPath: mLootChance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185982}

@@ -12,6 +12,8 @@ public class EnemyClass : PrimeCharacterClass
     [SerializeField] private GameObject mBlood;
     [SerializeField] private float mMaxSpeed;
     [SerializeField] private int mHealtBoost = 25;
+    [SerializeField] private int mLootChance = 10;
+    [SerializeField] private GameObject[] mPickup;
 
     [FMODUnity.EventRef]
     [SerializeField] private string mSoundDie = "event:/EnemyDie";
@@ -91,7 +93,7 @@ public class EnemyClass : PrimeCharacterClass
         {
             mAttackTimer = mAttackCooldown;
 
-            transform.GetComponentInChildren<MeleeAttack>().Attack(10, 1.5f, mSelfTag, mOtherTag);// going to add the player damage here
+            transform.GetComponentInChildren<MeleeAttack>().Attack(mDamage, 1.5f, mSelfTag, mOtherTag);// going to add the player damage here
             mAnim.SetTrigger("EnemyAttack");
         }
 
@@ -146,6 +148,17 @@ public class EnemyClass : PrimeCharacterClass
     // Johan Jansson
     public override void Death()
     {
+        var mChance = Random.Range(1f,100f);
+        int mRandomPickup = Random.Range(0, mPickup.Length);
+        if (mChance <= mLootChance && mPickup[mRandomPickup] != null)
+        {
+            var mVector = new Vector3(transform.position.x, transform.position.y + 0.27f, transform.position.z);
+            Instantiate(mPickup[mRandomPickup], mVector, transform.rotation);
+            
+
+        }
+        Debug.Log(mChance);
+
         mManager.EnemiesLeft = -1;
         mPlayer.Experience = mExp;
         Debug.Log("Enemy died giving the player " + mExp);

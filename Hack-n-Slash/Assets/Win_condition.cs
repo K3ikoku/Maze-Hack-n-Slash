@@ -7,6 +7,7 @@ public class Win_condition : MonoBehaviour
     private int mNrOfEnemies = 0;
     private PortalManager mPortal;
     private bool mNoLoop = false;
+
     public int EnemiesLeft
     {
         get { return mNrOfEnemies; }
