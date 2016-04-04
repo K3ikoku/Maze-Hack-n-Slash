@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{75b4ec7f-3abf-4bb0-be5c-95e4e7f701da}">
+        <property name="assetPath">
+            <value>Lost-Jungle - Trimmed.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>44.999977324263035</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f0c51e1b-9d38-41ef-93f1-d49661182da5}</destination>
+        </relationship>
+    </object>
+</objects>
